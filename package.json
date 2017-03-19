@@ -22,7 +22,8 @@
     "test": "source ./tools/env/testing.sh && ava -w",
     "test:once": "source ./tools/env/testing.sh && ava",
     "test:cov": "source ./tools/env/testing.sh && nyc ava ; rm -rf .nyc_output",
-    "open:test": "open ./docs/test/index.html"
+    "open:test": "open ./docs/test/index.html",
+    "cov:report": "./tools/test/cov:report.sh"
   },
   "ava": {
     "files": [
@@ -46,6 +47,7 @@
     "babel-plugin-transform-object-rest-spread": "latest",
     "babel-preset-env": "latest",
     "babel-register": "latest",
+    "codecov": "latest",
     "eslint": "latest",
     "eslint-plugin-flowtype": "latest",
     "flow-bin": "latest",
