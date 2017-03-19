@@ -1,0 +1,54 @@
+{
+  "name": "immut",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "immutable",
+    "structural sharing",
+    "data structures",
+    "data types",
+    "functional"
+  ],
+  "contributors": [
+    "Leon Pearce <leonp1991@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonp1991/immut.git"
+  },
+  "scripts": {
+    "build": "source tools/env/production.sh && babel source -d build",
+    "test": "source ./tools/env/testing.sh && ava -w",
+    "test:once": "source ./tools/env/testing.sh && ava",
+    "test:cov": "source ./tools/env/testing.sh && nyc ava ; rm -rf .nyc_output",
+    "open:test": "open ./docs/test/index.html"
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.spec.js",
+      "tests/*.spec.js"
+    ],
+    "source": [
+      "source/**/*.js",
+      "source/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "devDependencies": {
+    "ava": "latest",
+    "babel-cli": "latest",
+    "babel-eslint": "latest",
+    "babel-plugin-transform-flow-strip-types": "latest",
+    "babel-plugin-transform-object-rest-spread": "latest",
+    "babel-preset-env": "latest",
+    "babel-register": "latest",
+    "eslint": "latest",
+    "eslint-plugin-flowtype": "latest",
+    "flow-bin": "latest",
+    "nyc": "latest"
+  }
+}
