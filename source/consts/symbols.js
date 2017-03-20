@@ -8,8 +8,8 @@ import type { Symbols } from './types'
  * will have its own symbol on this map
  */
 const symbols: Symbols = {
-  List: '__Immut_List__',
-  Map:  '__Immut_Map__',
+  list: '__Immut_List__',
+  map:  '__Immut_Map__',
 }
 
 

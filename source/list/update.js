@@ -7,7 +7,7 @@
  */
 
 
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 import { curry } from '../utils/curry'
 
@@ -26,7 +26,7 @@ export const update: (l: List, k: any, f: Func) => List =
     data[k] = f(data[k])
 
     return {
-      __type__: Symbols.List,
+      __type__: symbols.list,
       __data__: data,
       __size__: data.length,
     }

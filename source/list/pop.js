@@ -7,7 +7,7 @@
  */
 
 
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 import type { List } from '../consts/types'
 
@@ -22,7 +22,7 @@ export const pop: (l: List) => List =
     data.pop()
 
     return {
-      __type__: Symbols.List,
+      __type__: symbols.list,
       __data__: data,
       __size__: data.length,
     }

@@ -7,7 +7,7 @@
  */
 
 
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 import { curry } from '../utils/curry'
 
@@ -20,7 +20,7 @@ import type { List } from '../consts/types'
  */
 export const push: (l: List, v: any) => List =
   (l, v) => ({
-    __type__: Symbols.List,
+    __type__: symbols.list,
     __data__: [ ...l.__data__, v ],
     __size__: l.__size__ + 1,
   })

@@ -1,6 +1,6 @@
 // @flow
 
-import Symbols   from '../consts/symbols'
+import symbols   from '../consts/symbols'
 
 import of        from './of'
 import apply     from '../immut/apply'
@@ -13,7 +13,7 @@ import partition from './partition'
 
 
 export default {
-  type: Symbols.Map,
+  type: symbols.map,
   of,
   apply,
   size,

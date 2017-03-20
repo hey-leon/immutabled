@@ -7,7 +7,7 @@
  */
 
 
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 import type { List } from '../consts/types'
 
@@ -23,7 +23,7 @@ export const of: (s?: List | Array<any>) => List =
 
 export const build: (data: Array<any>, size: number) => any =
   (data, size) => ({
-    __type__: Symbols.List,
+    __type__: symbols.list,
     __data__: data,
     __size__: size,
   })

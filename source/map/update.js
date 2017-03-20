@@ -7,7 +7,7 @@
  */
 
 
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 import { curry } from '../utils/curry'
 
@@ -21,7 +21,7 @@ import type { Map, Func } from '../consts/types'
  */
 export const update: (m: Map, k: any, f: Func) => Map =
   (m, k, f) => ({
-    __type__: Symbols.Map,
+    __type__: symbols.map,
     __size__: m.__data__[k] ? m.__size__ : m.__size__ + 1,
     __data__: {
       ...m.__data__, [k]: f(m.__data__[k]),

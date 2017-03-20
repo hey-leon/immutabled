@@ -1,14 +1,14 @@
 // @flow
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 
 type isType = (u: any) => boolean
 
 
-export const list: isType = u => u.__type__ === Symbols.List
+export const list: isType = u => u.__type__ === symbols.list
 
 
-export const map: isType = u => u.__type__ === Symbols.Map
+export const map: isType = u => u.__type__ === symbols.map
 
 
 // one day when we can refine the outer scopec in flow

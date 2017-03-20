@@ -7,7 +7,7 @@
  */
 
 
-import Symbols from '../consts/symbols'
+import symbols from '../consts/symbols'
 
 import type { Map } from '../consts/types'
 
@@ -16,14 +16,14 @@ import type { Map } from '../consts/types'
  * @param {Array<any>|Map} s of data to build map from
  */
 export const of: (s?: Map | Object) => Map =
-  (s={}) => s.__type__ === Symbols.Map
+  (s={}) => s.__type__ === symbols.map
           ? build({ ...s.__data__ }, s.__size__)
           : build({ ...s }, Object.keys(s).length)
 
 
 export const build: (data: Object, size: number) => Map =
   (data, size) => ({
-    __type__: Symbols.Map,
+    __type__: symbols.map,
     __data__: data,
     __size__: size,
   })
