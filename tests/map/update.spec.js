@@ -6,6 +6,7 @@ import {
   _,
 } from '../../source/utils/curry'
 
+import { testRefs } from '../helpers'
 
 test('map#update: should be curryable', t => {
   t.is(update(_), update)
@@ -13,28 +14,33 @@ test('map#update: should be curryable', t => {
 
 
 test('map#update: should update value', t => {
-  const prevMap = { __data__: { p: 1 }, __size__: 1 }
-  const nextMap =
-    update(prevMap, 'p', (v=0) => v + 1)
+  const k = 'prop'
+  const v = 1
 
-  t.not(prevMap, nextMap)
-  t.not(prevMap.__data__, nextMap.__data__)
-  t.is(nextMap.__data__.p, 2)
-  t.is(prevMap.__data__.p, 1)
-  t.is(prevMap.__size__, 1)
-  t.is(nextMap.__size__, 1)
+  const m1 = {
+    __data__: { [k]: v },
+    __size__: 1
+  }
+
+  const m2 = update(m1, k, (v=0) => v + 1)
+
+  t.true(testRefs(m1, m2, [k]))
+  t.is(m1.__data__[k], 1)
+  t.is(m2.__data__[k], 2)
 })
 
 
 test('map#update: should update when no value already', t => {
-  const prevMap = { __data__: {}, __size__: 0 }
-  const nextMap =
-    update(prevMap, 'p', (v=0) => v + 1)
+  const k = 'prop'
 
-  t.not(prevMap, nextMap)
-  t.not(prevMap.__data__, nextMap.__data__)
-  t.is(prevMap.__data__.p, undefined)
-  t.is(nextMap.__data__.p, 1)
-  t.is(prevMap.__size__, 0)
-  t.is(nextMap.__size__, 1)
+  const m1 = {
+    __data__: {},
+    __size__: 0
+  }
+
+  const m2 = update(m1, k, (v=0) => v + 1)
+
+  t.true(testRefs(m1, m2, [k]))
+  t.is(m1.__data__[k], undefined)
+  t.is(m2.__data__[k], 1)
 })

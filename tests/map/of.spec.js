@@ -19,7 +19,7 @@ function plan(t, i, e) {
 
   t.is(output.__type__, e.__type__)  // test the __type__
   t.is(output.__size__, e.__size__)  // test the __size__
-  t.not(output.__data__, data) // test for new ref
+  t.not(output.__data__, data)       // test for new ref
 
   Object // test shallow copy
     .entries(data)
