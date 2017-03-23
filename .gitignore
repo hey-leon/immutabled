@@ -1,4 +1,7 @@
+tools/env/keys.sh
+
 build/**/*
+docs/**/*
 
 node_modules
 
