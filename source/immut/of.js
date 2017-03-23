@@ -36,10 +36,10 @@ export const parse: (s: Shape | any, d: any) => Immut | Leaf | void =
  * @param {Object} d to parse
  */
 export const parseMap: (s: MapShape | any, d: Object) => Map | void =
-  (s, d={}) => d === Object(d) ?
+  (s, d={}) => d === Object(d)
 
                // parse keys of map
-               map.of(Object.entries(s.keys).reduce((acc, [k, v]) => ({
+             ? map.of(Object.entries(s.keys).reduce((acc, [k, v]) => ({
                  ...acc,
                  [k]: parse(v, d[k]),
                }), {}))
@@ -59,7 +59,7 @@ export const parseList: (s: ListShape, d: any) => List | void =
              ? list.of(d.map((_d) => parse(s.item, _d)))
 
                // shape miss match
-             : runtimeError(TypeError, 'data did not match the shape')
+             : runtimeError(TypeError, 'Shape did not match the data')
 
 
 /**
