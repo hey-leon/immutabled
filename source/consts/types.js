@@ -52,6 +52,7 @@ export type Symbols = {|
 
 
 export type ErrorTypes = TypeError
+                       | ReferenceError
                        | Error
 
 
