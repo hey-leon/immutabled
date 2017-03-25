@@ -35,7 +35,7 @@ test('immut#get: should access index on list type', t => {
   t.is(get(i, k), e)
 })
 
-test('immut#get: should error on bad key on map type', t => {
+test('immut#get: should error on bad key of map type', t => {
   const k = 1
   const e = 'val'
   const i = { __data__: { [2]: e } }
@@ -43,7 +43,7 @@ test('immut#get: should error on bad key on map type', t => {
   t.throws(() => get(i, k), ReferenceError)
 })
 
-test('immut#get: should error on bad key on list type', t => {
+test('immut#get: should error on bad key of list type', t => {
   const k = 1
   const e = 'val'
   const i = { __data__: [ e ] }
