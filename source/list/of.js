@@ -13,15 +13,15 @@ import type { List } from '../consts/types'
 
 
 /**
- * @param {Array<any>|List} s of data to build list from
+ * @param {any[]|List} s of data to build list from
  */
-export const of: (s?: List | Array<any>) => List =
+export const of: (s?: List | any[]) => List =
   (s=[]) => Array.isArray(s)
           ? build([ ...s ], s.length)
           : build([ ...s.__data__ ], s.__size__)
 
 
-export const build: (data: Array<any>, size: number) => any =
+export const build: (data: any[], size: number) => any =
   (data, size) => ({
     __type__: symbols.list,
     __data__: data,
