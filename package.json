@@ -27,12 +27,10 @@
   },
   "ava": {
     "files": [
-      "tests/**/*.spec.js",
-      "tests/*.spec.js"
+      "tests/**/*.spec.js"
     ],
     "source": [
-      "source/**/*.js",
-      "source/*.js"
+      "source/**/*.js"
     ],
     "require": [
       "babel-register"
