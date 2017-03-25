@@ -43,61 +43,68 @@ test('#curry: should return the correct curried func', t => {
 
 test('#curry1: should return a curried 1 arg func', t => {
   const testFunc = a => a
-  const currFunc = curry1(testFunc)
 
-  t.is(currFunc.length, 1)
-  t.is(currFunc(_), currFunc)
-  t.is(currFunc(3), 3)
+  const cf1 = curry1(testFunc)
+
+  t.is(cf1.name, 'c1')
+  t.is(cf1.length, 1)
+  t.is(cf1(), cf1)
+  t.is(cf1(_), cf1)
+
+  t.is(cf1(1), 1)
 })
 
 
 test('#curry2: should return a curried 2 arg func', t => {
   const testFunc = (a, b) => b
-  const currFunc2 = curry2(testFunc)
 
-  t.is(currFunc2.length, 2)
+  const cf2 = curry2(testFunc)
 
-  const currFuncA = currFunc2(1)    // (1, _)
-  const currFuncB = currFunc2(_, 3) // (_, 3)
+  t.is(cf2.name, 'c2')
+  t.is(cf2.length, 2)
+  t.is(cf2(), cf2)
+  t.is(cf2(_), cf2)
+  t.is(cf2(_, _), cf2)
 
-  t.is(currFuncA.length, 1)
-  t.is(currFuncB.length, 1)
-  t.is(currFuncA(6), 6)
-  t.is(currFuncB(6), 3)
+  t.is(cf2(1, 2), 2)
+  t.is(cf2(1)(2), 2)
+  t.is(cf2(1, _)(2), 2)
+  t.is(cf2(_, 2)(1), 2)
 })
 
 
 test('#curry3: should return a curried 3 arg func', t => {
   const testFunc = (a, b, c) => c
-  const currFunc3 = curry3(testFunc)
 
-  t.is(currFunc3.length, 3)
+  const cf3 = curry3(testFunc)
 
-  const currFuncA = currFunc3(1)       // (1, _, _)
-  const currFuncB = currFunc3(_, 2)    // (_, 2, _)
-  const currFuncC = currFunc3(_, _, 3) // (_, _, 3)
+  t.is(cf3.name, 'c3')
+  t.is(cf3.length, 3)
+  t.is(cf3(), cf3)
+  t.is(cf3(_), cf3)
+  t.is(cf3(_, _), cf3)
+  t.is(cf3(_, _, _), cf3)
 
-  t.is(currFuncA.length, 2)
-  t.is(currFuncB.length, 2)
-  t.is(currFuncC.length, 2)
-
-  const currFuncAB = currFuncA(4)    // (1, 4, _)
-  const currFuncAC = currFuncA(_, 5) // (1, _, 5)
-  const currFuncBA = currFuncB(6)    // (6, 2, _)
-  const currFuncBC = currFuncB(_, 7) // (_, 2, 7)
-  const currFuncCA = currFuncC(8)    // (8, _, 3)
-  const currFuncCB = currFuncC(_, 9) // (_, 9, 3)
-
-  t.is(currFuncAB.length, 1)
-  t.is(currFuncAC.length, 1)
-  t.is(currFuncBA.length, 1)
-  t.is(currFuncBC.length, 1)
-  t.is(currFuncCA.length, 1)
-  t.is(currFuncCB.length, 1)
-  t.is(currFuncAB(10), 10)
-  t.is(currFuncAC(11), 5)
-  t.is(currFuncBA(12), 12)
-  t.is(currFuncBC(13), 7)
-  t.is(currFuncCA(14), 3)
-  t.is(currFuncCB(15), 3)
+  t.is(cf3(1, 2, 3), 3)
+  t.is(cf3(1, 2)(3), 3)
+  t.is(cf3(1, 2, _)(3), 3)
+  t.is(cf3(1, _, 3)(2), 3)
+  t.is(cf3(_, 2, 3)(1), 3)
+  t.is(cf3(1)(2)(3), 3)
+  t.is(cf3(1)(2, _)(3), 3)
+  t.is(cf3(1, _)(2)(3), 3)
+  t.is(cf3(1, _)(2, _)(3), 3)
+  t.is(cf3(1, _)(_, 3)(2), 3)
+  t.is(cf3(1, _, _)(2)(3), 3)
+  t.is(cf3(1, _, _)(2, _)(3), 3)
+  t.is(cf3(1, _, _)(_, 3)(2), 3)
+  t.is(cf3(_, 2)(1)(3), 3)
+  t.is(cf3(_, 2)(1, _)(3), 3)
+  t.is(cf3(_, 2)(_, 3)(1), 3)
+  t.is(cf3(_, 2, _)(1)(3), 3)
+  t.is(cf3(_, 2, _)(1, _)(3), 3)
+  t.is(cf3(_, 2, _)(_, 3)(1), 3)
+  t.is(cf3(_, _, 3)(1)(2), 3)
+  t.is(cf3(_, _, 3)(1, _)(2), 3)
+  t.is(cf3(_, _, 3)(_, 2)(1), 3)
 })
