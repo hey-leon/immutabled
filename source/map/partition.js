@@ -27,7 +27,7 @@ export const partition: (m: Map, f: Func) => void | [ Map, Map ] =
 /**
  * @param {Function} f predicate
  */
-export const pEntry: Func => ([Map, Map], [any, any], number, Array<any>) => [Map, Map] =
+export const pEntry: Func => ([Map, Map], [any, any], number, any[]) => [Map, Map] =
   f => ([ l, r ], [ k, e ], i, a) => {
     const p = f(e)
 

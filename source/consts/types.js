@@ -21,7 +21,7 @@ export type Map = {|
 
 export type List = {|
   __type__: '__Immut_List__',
-  __data__: Array<any>,
+  __data__: any[],
   __size__: number,
 |}
 

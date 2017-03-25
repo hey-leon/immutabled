@@ -13,7 +13,7 @@ import type { Map } from '../consts/types'
 
 
 /**
- * @param {Array<any>|Map} s of data to build map from
+ * @param {any[]|Map} s of data to build map from
  */
 export const of: (s?: Map | Object) => Map =
   (s={}) => s.__type__ === symbols.map

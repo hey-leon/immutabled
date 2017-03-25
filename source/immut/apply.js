@@ -17,10 +17,10 @@ import type { Immut, Func } from '../consts/types'
 
 /**
  * @param {Immut} i to apply f to
- * @param {Array<any>} ks of the path to apply to
+ * @param {any[]} ks of the path to apply to
  * @param {Func} f to apply
  */
-export const apply: (Immut, Array<any>, Func) => Immut | void =
+export const apply: (Immut, any[], Func) => Immut | void =
   (i, [ k, ...ks ], f) => !i || !i.__data__      ? runtimeError(Error, `${k} is not an immut type`)
                         : !k                     ? f(i)
                         : is.list(i.__data__[k]) ? list.set(k, i, apply(i, ks, f))
