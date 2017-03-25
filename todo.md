@@ -1,4 +1,6 @@
 ### TODO
 
-- test Immut#from
-- test Immut#apply
+- test immut#from
+- test immut#apply
+
+- test map#partition
