@@ -4,7 +4,7 @@ source ./tools/env/keys.sh
 #
 # generate and post coverage
 #
-./node_modules/.bin/nyc ./node_modules/.bin/ava
+./node_modules/.bin/nyc ./node_modules/.bin/ava &&
 ./node_modules/.bin/nyc report --reporter=lcov > coverage.lcov &&
 ./node_modules/.bin/codecov -t $CODECOV_TOKEN \
                             -p "." \
