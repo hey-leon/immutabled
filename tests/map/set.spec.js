@@ -27,6 +27,7 @@ test('map#set: should set new value', t => {
   t.true(testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], undefined)
   t.is(m2.__data__[k], v)
+  t.is(m2.__size__, m1.__size__ + 1)
 })
 
 
@@ -45,4 +46,5 @@ test('map#set: should overwrite value', t => {
   t.true(testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], v1)
   t.is(m2.__data__[k], v2)
+  t.is(m2.__size__, m1.__size__)
 })

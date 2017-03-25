@@ -28,6 +28,7 @@ test('map#merge: should merge value', t => {
     ])
   ])
   t.deepEqual(m3.__data__, { p: 1, b: 1 })
+  t.is(m3.__size__, 2)
 })
 
 
@@ -47,4 +48,5 @@ test('map#merge: should merge value overwriting m1', t => {
     ])
   ])
   t.deepEqual(m3.__data__, { a: 1, b: 1, c: 9 })
+  t.is(m3.__size__, 3)
 })
