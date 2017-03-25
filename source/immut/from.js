@@ -8,6 +8,7 @@
 import list from '../list'
 import map  from '../map'
 
+import { curry }        from '../utils/curry'
 import { runtimeError } from '../utils/helpers'
 
 import type {
@@ -26,16 +27,16 @@ import type {
  * @param {Object} d to parse
  */
 export const parse: (s: Shape | any, d: any) => Immut | Leaf | void =
-  (s, d) => s.type === list.type ? parseList(s, d)
-          : s.type === map.type  ? parseMap(s, d)
-          : parseLeaf(s, d)
+  (s, d) => s.type === list.type ? ofList(s, d)
+          : s.type === map.type  ? ofMap(s, d)
+          : ofLeaf(s, d)
 
 
 /**
  * @param {Object} s template of the shape
  * @param {Object} d to parse
  */
-export const parseMap: (s: MapShape | any, d: Object) => Map | void =
+export const ofMap: (s: MapShape, d: Object) => Map | void =
   (s, d={}) => d === Object(d)
 
                // parse keys of map
@@ -52,7 +53,7 @@ export const parseMap: (s: MapShape | any, d: Object) => Map | void =
  * @param {Object} s template of the shape
  * @param {Object} d to parse
  */
-export const parseList: (s: ListShape, d: any) => List | void =
+export const ofList: (s: ListShape, d: any) => List | void =
   (s, d=[]) => Array.isArray(d)
 
                // build list items with item shape
@@ -66,10 +67,8 @@ export const parseList: (s: ListShape, d: any) => List | void =
  * @param {Object} s template of the shape
  * @param {Object} d to parse
  */
-export const parseLeaf: (s: any, d: any) => Leaf | void =
+export const ofLeaf: (s: any, d: any) => Leaf | void =
   (s, d) => d ? d : s
 
 
-
-
-export default parse
+export default curry(parse)

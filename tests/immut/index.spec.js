@@ -2,8 +2,8 @@ import test from 'ava'
 
 import immut from '../../source/immut'
 
-test('exports: of is included', t => {
-  t.true(immut.of instanceof Function)
+test('exports: from is included', t => {
+  t.true(immut.from instanceof Function)
 })
 
 test('exports: size is included', t => {
