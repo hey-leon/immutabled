@@ -2,11 +2,15 @@ import test from 'ava'
 
 import {
   immut,
-  map,
   list,
-  is,
+  map,
   _,
   curry,
+  isList,
+  isMap,
+  isArray,
+  isObject,
+  isPrimitive,
 } from '../source'
 
 
@@ -25,16 +29,20 @@ test('exports: list is included', t => {
 })
 
 
-test('exports: is is included', t => {
-  t.true(is === Object(is))
-})
-
-
 test('exports: _ (no bind) is included', t => {
   t.true(_ === Symbol.for('no_bind'))
 })
 
 
-test('exports: curry is included', t => {
+test('exports: #curry is included', t => {
   t.true(curry instanceof Function)
+})
+
+
+test('exports: #is* is included', t => {
+  t.true(isList instanceof Function)
+  t.true(isMap instanceof Function)
+  t.true(isArray instanceof Function)
+  t.true(isObject instanceof Function)
+  t.true(isPrimitive instanceof Function)
 })

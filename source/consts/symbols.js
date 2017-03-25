@@ -27,7 +27,7 @@ export default symbols
 /**
  * USE ES2015 SYMBOLS WHEN FLOW SUPPORTS
  */
-// const Symbols: { [k: string]: Symbol } = {
+// const symbols: { [k: string]: Symbol } = {
 //   Map:  Symbol.for('__Immut_Map__'),
 //   List: Symbol.for('__Immut_List__'),
 // }

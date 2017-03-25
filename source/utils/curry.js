@@ -18,7 +18,7 @@ export const curry1: Func => Func =
       case 0:
         return c1
       default:
-        return noBind(a) ? c1 : curry1(_b => f(a, _b))
+        return noBind(a) ? c1 : f(a)
     }
   }
 
