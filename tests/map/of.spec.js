@@ -3,28 +3,7 @@ import test from 'ava'
 import Symbols from '../../source/consts/symbols'
 import of      from '../../source/map/of'
 
-
-/**
- * test macro
- * @param {Object} t ava assertions
- * @param {Object|Immut.Map} i input for #of
- * @param {Immut.Map} e expected output
- */
-function plan(t, i, e) {
-  const output = of(i)
-
-  const data = !i          ? {}
-             :  i.__data__ ? i.__data__
-             :  i
-
-  t.is(output.__type__, e.__type__)  // test the __type__
-  t.is(output.__size__, e.__size__)  // test the __size__
-  t.not(output.__data__, data)       // test for new ref
-
-  Object // test shallow copy
-    .entries(data)
-    .forEach(([k, v]) => { t.is(v, output.__data__[k]) })
-}
+import { testOf } from '../helpers'
 
 
 
@@ -34,7 +13,7 @@ const e0 = {
   __size__: 0,
 }
 
-test('map#of: should return map of undefined', plan, undefined, e0)
+test('map#of: should return map of undefined', testOf, undefined, e0, of)
 
 
 const i1 = {}
@@ -44,7 +23,7 @@ const e1 = {
   __size__: 0,
 }
 
-test('map#of: should return map of {}', plan, i1, e1)
+test('map#of: should return map of {}', testOf, i1, e1, of)
 
 
 
@@ -55,7 +34,7 @@ const e2 = {
   __size__: 1,
 }
 
-test('map#of: should return map of {} with props', plan, i2, e2)
+test('map#of: should return map of {} with props', testOf, i2, e2, of)
 
 
 
@@ -66,7 +45,7 @@ const e3 = {
   __size__: 1,
 }
 
-test('map#of: should return map of {} with nested', plan, i3, e3)
+test('map#of: should return map of {} with nested', testOf, i3, e3, of)
 
 
 
@@ -77,7 +56,7 @@ const e4 = {
   __size__: 2,
 }
 
-test('map#of: should return map of complex shape', plan, i4, e4)
+test('map#of: should return map of complex shape', testOf, i4, e4, of)
 
 
 
@@ -88,4 +67,4 @@ const e5 = {
   __size__: 1,
 }
 
-test('map#of: should return map of map', plan, i5, e5)
+test('map#of: should return map of map', testOf, i5, e5, of)

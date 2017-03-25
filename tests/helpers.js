@@ -1,4 +1,27 @@
 
+/**
+ * @param {Object} t ava assertions
+ * @param {Object|List} i input for #of
+ * @param {List} e expected output
+ * @param {Func} of for immut type
+ */
+export const testOf =
+  (t, i, e, of) => {
+    const output = of(i)
+
+    const data = !i          ? {}
+              :  i.__data__ ? i.__data__
+              :  i
+
+    t.is(output.__type__, e.__type__)  // test the __type__
+    t.is(output.__size__, e.__size__)  // test the __size__
+    t.not(output.__data__, data)       // test for new ref
+
+    Object // test shallow copy
+      .entries(data)
+      .forEach(([k, v]) => { t.is(v, output.__data__[k]) })
+  }
+
 
 /**
  * @param {Immut} i1 previous immut
@@ -29,5 +52,5 @@ export const testDataRefs =
 /**
  * ref checks
  */
-const notEq = (i1, i2, k) => i1.__data__[k] !== i2.__data__[k]
-const isEq  = (i1, i2, k) => i1.__data__[k] === i2.__data__[k]
+export const notEq = (i1, i2, k) => i1.__data__[k] !== i2.__data__[k]
+export const isEq  = (i1, i2, k) => i1.__data__[k] === i2.__data__[k]
