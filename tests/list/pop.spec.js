@@ -2,16 +2,7 @@ import test from 'ava'
 
 import pop from '../../source/list/pop'
 
-import {
-  _,
-} from '../../source/utils/curry'
-
 import { testRefs } from '../helpers'
-
-test('list#pop: should be curryable', t => {
-  t.is(pop(_), pop)
-})
-
 
 test('list#pop: should pop new value', t => {
   const k = 3
