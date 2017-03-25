@@ -47,3 +47,8 @@ test('exports: merge is included', t => {
 test('exports: partition is included', t => {
   t.true(map.partition instanceof Function)
 })
+
+
+test('exports: pluck is included', t => {
+  t.true(map.pluck instanceof Function)
+})

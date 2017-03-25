@@ -10,6 +10,7 @@ import set       from './set'
 import update    from './update'
 import merge     from './merge'
 import partition from './partition'
+import pluck     from './pluck'
 
 
 export default {
@@ -22,4 +23,5 @@ export default {
   update,
   merge,
   partition,
+  pluck
 }
