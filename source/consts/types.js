@@ -29,8 +29,8 @@ export type List = {|
 
 //--------------------------- parsing node types ----------------------------//
 
-export type ListShape = { type: '__Immut_List__', item: any    }
-export type MapShape  = { type: '__Immut_Map__',  keys: Object }
+export type ListShape = {| type: '__Immut_List__', item: any    |}
+export type MapShape  = {| type: '__Immut_Map__',  keys: Object |}
 
 
 export type Shape = ListShape
