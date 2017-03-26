@@ -1,6 +1,4 @@
 ### TODO
 
 - test immut#from
-- test immut#apply
-
-- test map#partition
+- submit patch for documentation.js (Error: Unknown property encountered: RestElement)
