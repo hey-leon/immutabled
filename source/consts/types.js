@@ -13,14 +13,14 @@ export type Immut = List | Map
 
 
 export type Map = {|
-  __type__: '__Immut_Map__',
+  __type__: '__immut_map__',
   __data__: Object,
   __size__: number,
 |}
 
 
 export type List = {|
-  __type__: '__Immut_List__',
+  __type__: '__immut_list__',
   __data__: any[],
   __size__: number,
 |}
@@ -29,8 +29,8 @@ export type List = {|
 
 //--------------------------- parsing node types ----------------------------//
 
-export type ListShape = {| type: '__Immut_List__', item: any    |}
-export type MapShape  = {| type: '__Immut_Map__',  keys: Object |}
+export type ListShape = {| type: '__immut_list__', item: any    |}
+export type MapShape  = {| type: '__immut_map__',  keys: Object |}
 
 
 export type Shape = ListShape
@@ -46,8 +46,8 @@ export type Leaf = string
 //------------------------------ common types -------------------------------//
 
 export type Symbols = {|
-  list: '__Immut_List__',
-  map: '__Immut_Map__',
+  list: '__immut_list__',
+  map: '__immut_map__',
 |}
 
 
