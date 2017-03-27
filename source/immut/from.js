@@ -1,9 +1,16 @@
 // @flow
 
+
 /**
- * implementation for Immut#parse
+ * implementation for Immut#from
  * @author Leon Pearce <leonp1991@gmail.com>
  */
+
+
+//
+// NOTE: from is internally known as parse
+//
+
 
 import list from '../list'
 import map  from '../map'
@@ -27,8 +34,8 @@ import type {
  * @param {Object} d to parse
  */
 export const parse: (s: Shape | any, d: any) => Immut | Leaf | void =
-  (s, d) => s.type === list.type ? ofList(s, d)
-          : s.type === map.type  ? ofMap(s, d)
+  (s, d) => s && s.type === list.type ? ofList(s, d)
+          : s && s.type === map.type  ? ofMap(s, d)
           : ofLeaf(s, d)
 
 
@@ -39,14 +46,14 @@ export const parse: (s: Shape | any, d: any) => Immut | Leaf | void =
 export const ofMap: (s: MapShape, d: Object) => Map | void =
   (s, d={}) => d === Object(d)
 
-               // parse keys of map
-             ? map.of(Object.entries(s.keys).reduce((acc, [k, v]) => ({
-                 ...acc,
-                 [k]: parse(v, d[k]),
-               }), {}))
+      // parse keys of map
+    ? map.of(Object.entries(s.keys).reduce((acc, [k, v]) => ({
+        ...acc,
+        [k]: parse(v, d[k]),
+      }), {}))
 
-               // shape miss match
-             : runtimeError(TypeError, 'Shape did not match the data')
+      // shape miss match
+    : runtimeError(TypeError, 'Shape did not match the data')
 
 
 /**
@@ -56,11 +63,11 @@ export const ofMap: (s: MapShape, d: Object) => Map | void =
 export const ofList: (s: ListShape, d: any) => List | void =
   (s, d=[]) => Array.isArray(d)
 
-               // build list items with item shape
-             ? list.of(d.map((_d) => parse(s.item, _d)))
+      // build list items with item shape
+    ? list.of(d.map((_d) => parse(s.item, _d)))
 
-               // shape miss match
-             : runtimeError(TypeError, 'Shape did not match the data')
+      // shape miss match
+    : runtimeError(TypeError, 'Shape did not match the data')
 
 
 /**
@@ -68,7 +75,9 @@ export const ofList: (s: ListShape, d: any) => List | void =
  * @param {Object} d to parse
  */
 export const ofLeaf: (s: any, d: any) => Leaf | void =
-  (s, d) => d ? d : s
+  (s, d) => d || d === null
+    ? d
+    : s
 
 
 export default curry(parse)
