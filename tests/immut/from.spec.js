@@ -3,7 +3,7 @@ import test from 'ava'
 // from is internally known as parse
 import parse from '../../source/immut/from'
 
-import list from '../../source/map'
+import list from '../../source/list'
 import map  from '../../source/map'
 
 import {
@@ -75,7 +75,21 @@ test('immut#from: should add defaults for missing keys', t => {
 })
 
 
-test.todo('immut#from: should parse simple list')
+test('immut#from: should parse simple list', t => {
+  const shape = {
+    type: list.type,
+    item: 0
+  }
+
+  t.deepEqual(
+    parse(shape, [ 10, 22, 11 ]),
+    list.of([
+      10,
+      22,
+      11,
+    ])
+  )
+})
 
 
 test.todo('immut#from: should parse map of maps')
@@ -84,7 +98,30 @@ test.todo('immut#from: should parse map of maps')
 test.todo('immut#from: should parse list of lists')
 
 
-test.todo('immut#from: should parse complex shape')
+test('immut#from: should parse complex shape', t => {
+  const shape = {
+    type: list.type,
+    item: {
+      type: map.type,
+      keys: {
+        b: 33,
+        c: {
+          type: list.type,
+          item: 0,
+        },
+      },
+    },
+  }
+
+  t.deepEqual(
+    parse(shape, [ { b: 22 }, { c: [10] }, {} ]),
+    list.of([
+      map.of({ b: 22, c: list.of() }),
+      map.of({ b: 33, c: list.of([10]) }),
+      map.of({ b: 33, c: list.of() })
+    ])
+  )
+})
 
 
 test('ofMap: should throw if d !== {}', t => {

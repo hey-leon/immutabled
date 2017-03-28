@@ -64,7 +64,7 @@ export const ofList: (s: ListShape, d: any) => List | void =
   (s, d=[]) => Array.isArray(d)
 
       // build list items with item shape
-    ? list.of(d.map((_d) => parse(s.item, _d)))
+    ? list.of(d.map(_d => parse(s.item, _d)))
 
       // shape miss match
     : runtimeError(TypeError, 'Shape did not match the data')
