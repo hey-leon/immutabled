@@ -29,6 +29,7 @@ import type {
 } from '../consts/types'
 
 
+
 /**
  * @param {Object} s template of the shape
  * @param {Object} d to parse
@@ -37,6 +38,7 @@ export const parse: (s: Shape | any, d: any) => Immut | Leaf | void =
   (s, d) => s && s.type === list.type ? ofList(s, d)
           : s && s.type === map.type  ? ofMap(s, d)
           : ofLeaf(s, d)
+
 
 
 /**
@@ -56,6 +58,7 @@ export const ofMap: (s: MapShape, d: Object) => Map | void =
     : runtimeError(TypeError, 'Shape did not match the data')
 
 
+
 /**
  * @param {Object} s template of the shape
  * @param {Object} d to parse
@@ -68,6 +71,7 @@ export const ofList: (s: ListShape, d: any) => List | void =
 
       // shape miss match
     : runtimeError(TypeError, 'Shape did not match the data')
+
 
 
 /**

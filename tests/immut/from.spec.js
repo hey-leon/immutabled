@@ -1,6 +1,11 @@
 import test from 'ava'
 
-// from is internally known as parse
+
+//
+// NOTE: from is internally known as parse
+//
+
+
 import parse from '../../source/immut/from'
 
 import list from '../../source/list'
@@ -157,10 +162,10 @@ test('immut#from: should parse complex shape', t => {
   }
 
   t.deepEqual(
-    parse(shape, [ { b: 22 }, { c: [10] }, {} ]),
+    parse(shape, [ { b: 22 }, { c: [ 10, 11 ] }, {} ]),
     list.of([
       map.of({ b: 22, c: list.of() }),
-      map.of({ b: 33, c: list.of([10]) }),
+      map.of({ b: 33, c: list.of([ 10, 11 ]) }),
       map.of({ b: 33, c: list.of() }),
     ])
   )
