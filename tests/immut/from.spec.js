@@ -92,10 +92,53 @@ test('immut#from: should parse simple list', t => {
 })
 
 
-test.todo('immut#from: should parse map of maps')
+test('immut#from: should parse map of maps', t => {
+  const shape = {
+    type: map.type,
+    keys: {
+      b: 33,
+      c: {
+        type: map.type,
+        keys: {
+          a: "kubernetes",
+          b: "docker"
+        },
+      },
+    },
+  }
+
+  t.deepEqual(
+    parse(shape, { b: 1, c: { b: "compose" } }),
+    map.of({
+      b: 1,
+      c: map.of({
+        a: "kubernetes",
+        b: "compose",
+      }),
+    })
+  )
+})
 
 
-test.todo('immut#from: should parse list of lists')
+test('immut#from: should parse list of lists', t => {
+  const shape = {
+    type: list.type,
+    item: {
+      type: list.type,
+      item: 0,
+    },
+  }
+
+  t.deepEqual(
+    parse(shape, [ [], [], [], [] ]),
+    list.of([
+      list.of(),
+      list.of(),
+      list.of(),
+      list.of(),
+    ])
+  )
+})
 
 
 test('immut#from: should parse complex shape', t => {
@@ -118,7 +161,7 @@ test('immut#from: should parse complex shape', t => {
     list.of([
       map.of({ b: 22, c: list.of() }),
       map.of({ b: 33, c: list.of([10]) }),
-      map.of({ b: 33, c: list.of() })
+      map.of({ b: 33, c: list.of() }),
     ])
   )
 })
