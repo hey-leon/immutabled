@@ -24,6 +24,11 @@ test('exports: size is included', t => {
 })
 
 
+test('exports: data is included', t => {
+  t.true(list.data instanceof Function)
+})
+
+
 test('exports: get is included', t => {
   t.true(list.get instanceof Function)
 })
@@ -41,6 +46,11 @@ test('exports: update is included', t => {
 
 test('exports: push is included', t => {
   t.true(list.push instanceof Function)
+})
+
+
+test('exports: partition is included', t => {
+  t.true(list.partition instanceof Function)
 })
 
 

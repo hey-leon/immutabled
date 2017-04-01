@@ -19,8 +19,14 @@ test('exports: apply is included', t => {
   t.true(map.apply instanceof Function)
 })
 
+
 test('exports: size is included', t => {
   t.true(map.size instanceof Function)
+})
+
+
+test('exports: data is included', t => {
+  t.true(map.data instanceof Function)
 })
 
 

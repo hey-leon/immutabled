@@ -5,6 +5,7 @@ import symbols   from '../consts/symbols'
 import of        from './of'
 import apply     from '../immut/apply'
 import size      from '../immut/size'
+import data      from '../immut/data'
 import get       from '../immut/get'
 import set       from './set'
 import update    from './update'
@@ -19,6 +20,7 @@ export {
   of,
   apply,
   size,
+  data,
   get,
   set,
   update,
@@ -33,6 +35,7 @@ export default {
   of,
   apply,
   size,
+  data,
   get,
   set,
   update,

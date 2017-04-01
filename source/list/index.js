@@ -2,14 +2,16 @@
 
 import symbols from '../consts/symbols'
 
-import of     from './of'
-import apply  from '../immut/apply'
-import size   from '../immut/size'
-import get    from '../immut/get'
-import set    from './set'
-import update from './update'
-import push   from './push'
-import pop    from './pop'
+import of        from './of'
+import apply     from '../immut/apply'
+import size      from '../immut/size'
+import data      from '../immut/data'
+import get       from '../immut/get'
+import set       from './set'
+import update    from './update'
+import push      from './push'
+import pop       from './pop'
+import partition from './partition'
 
 
 export const type = symbols.list
@@ -18,11 +20,13 @@ export {
   of,
   apply,
   size,
+  data,
   get,
   set,
   update,
   push,
   pop,
+  partition,
 }
 
 
@@ -31,9 +35,11 @@ export default {
   of,
   apply,
   size,
+  data,
   get,
   set,
   update,
   push,
   pop,
+  partition,
 }
