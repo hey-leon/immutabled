@@ -13,8 +13,9 @@ import partition from './partition'
 import pluck     from './pluck'
 
 
-export default {
-  type: symbols.map,
+export const type = symbols.map
+
+export {
   of,
   apply,
   size,
@@ -23,5 +24,19 @@ export default {
   update,
   merge,
   partition,
-  pluck
+  pluck,
+}
+
+
+export default {
+  type,
+  of,
+  apply,
+  size,
+  get,
+  set,
+  update,
+  merge,
+  partition,
+  pluck,
 }
