@@ -86,3 +86,8 @@ test('exports: some is included', t => {
 test('exports: find is included', t => {
   t.true(list.find instanceof Function)
 })
+
+
+test('exports: findIndex is included', t => {
+  t.true(list.findIndex instanceof Function)
+})

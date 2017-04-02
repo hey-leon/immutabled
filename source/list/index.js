@@ -14,6 +14,7 @@ import pop       from './pop'
 import indexOf   from './indexOf'
 import filter    from './filter'
 import find      from './find'
+import findIndex from './findIndex'
 import concat    from './concat'
 import every     from './every'
 import some      from './some'
@@ -39,6 +40,7 @@ export {
   every,
   some,
   find,
+  findIndex,
 }
 
 
@@ -60,4 +62,5 @@ export default {
   every,
   some,
   find,
+  findIndex,
 }
