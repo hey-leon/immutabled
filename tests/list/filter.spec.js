@@ -1,6 +1,9 @@
 import test from 'ava'
 
-import filter from '../../source/list/filter'
+import Sinon from 'sinon'
+
+import symbols from '../../source/consts/symbols'
+import filter  from '../../source/list/filter'
 
 import {
   _,
@@ -11,50 +14,24 @@ test('list#filter: should be curryable', t => {
 })
 
 
-test('list#filter: should return empty list', t => {
-  const l1 = {
-    __data__: [],
-    __size__: 0,
+test('list#filter: should return a list type', t => {
+  const l = {
+    __data__: []
   }
 
-  const l2 = filter(l1, () => true)
-
-  t.not(l1.__data__, l2.__data__)
-  t.is(l2.__size__, 0)
-  t.deepEqual(l2.__data__, [])
-})
-
-test('list#filter: should return all items', t => {
-  const l1 = {
-    __size__: 3,
-    __data__: [
-      1,
-      2,
-      3,
-    ]
-  }
-
-  const l2 = filter(l1, v => v > 0)
-
-  t.not(l1.__data__, l2.__data__)
-  t.is(l2.__size__, 3)
-  t.deepEqual(l2.__data__, [ 1, 2, 3 ])
+  t.is(filter(l, f => f).__type__, symbols.list)
 })
 
 
-test('list#filter: should return some items', t => {
-  const l1 = {
-    __size__: 3,
-    __data__: [
-      1,
-      2,
-      -1,
-    ]
+test('list#filter: should call Array.prototype.filter w/ __data__', t => {
+  const f = f => f
+  const l = {
+    __data__: []
   }
 
-  const l2 = filter(l1, v => v < 0)
+  const Spy = Sinon.spy(Array.prototype.filter, 'call')
 
-  t.not(l1.__data__, l2.__data__)
-  t.is(l2.__size__, 1)
-  t.deepEqual(l2.__data__, [ -1 ])
+  filter(l, f)
+
+  t.true(Spy.calledWith(l.__data__, f))
 })

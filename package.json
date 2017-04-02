@@ -49,6 +49,7 @@
     "eslint": "latest",
     "eslint-plugin-flowtype": "latest",
     "flow-bin": "latest",
-    "nyc": "latest"
+    "nyc": "latest",
+    "sinon": "^2.1.0"
   }
 }
