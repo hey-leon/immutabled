@@ -7,9 +7,8 @@
  */
 
 
+import { of }    from './of'
 import { curry } from '../utils/curry'
-
-import of from './of'
 
 import type { List, Func } from '../consts/types'
 

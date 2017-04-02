@@ -7,7 +7,8 @@
  */
 
 
-import symbols from '../consts/symbols'
+import { of }    from './of'
+import { curry } from '../utils/curry'
 
 import type { List } from '../consts/types'
 
@@ -21,12 +22,8 @@ export const pop: (l: List) => List =
 
     data.pop()
 
-    return {
-      __type__: symbols.list,
-      __data__: data,
-      __size__: data.length,
-    }
+    return of(data)
   }
 
 
-export default pop
+export default curry(pop)

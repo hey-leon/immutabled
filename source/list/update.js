@@ -7,8 +7,7 @@
  */
 
 
-import symbols from '../consts/symbols'
-
+import { of }    from './of'
 import { curry } from '../utils/curry'
 
 import type { List, Func } from '../consts/types'
@@ -25,11 +24,7 @@ export const update: (l: List, k: any, f: Func) => List =
 
     data[k] = f(data[k])
 
-    return {
-      __type__: symbols.list,
-      __data__: data,
-      __size__: data.length,
-    }
+    return of(data)
   }
 
 

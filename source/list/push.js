@@ -7,8 +7,7 @@
  */
 
 
-import symbols from '../consts/symbols'
-
+import { of }    from './of'
 import { curry } from '../utils/curry'
 
 import type { List } from '../consts/types'
@@ -19,11 +18,7 @@ import type { List } from '../consts/types'
  * @param {any}  v to push
  */
 export const push: (l: List, v: any) => List =
-  (l, v) => ({
-    __type__: symbols.list,
-    __data__: [ ...l.__data__, v ],
-    __size__: l.__size__ + 1,
-  })
+  (l, v) => of([ ...l.__data__, v ])
 
 
 export default curry(push)
