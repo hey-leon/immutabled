@@ -13,6 +13,7 @@ import push      from './push'
 import pop       from './pop'
 import indexOf   from './indexOf'
 import filter    from './filter'
+import find      from './find'
 import concat    from './concat'
 import every     from './every'
 import some      from './some'
@@ -37,6 +38,7 @@ export {
   concat,
   every,
   some,
+  find,
 }
 
 
@@ -57,4 +59,5 @@ export default {
   concat,
   every,
   some,
+  find,
 }
