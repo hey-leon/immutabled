@@ -13,6 +13,7 @@ import push      from './push'
 import pop       from './pop'
 import indexOf   from './indexOf'
 import filter    from './filter'
+import concat    from './concat'
 import partition from './partition'
 
 
@@ -31,6 +32,7 @@ export {
   indexOf,
   filter,
   partition,
+  concat,
 }
 
 
@@ -48,4 +50,5 @@ export default {
   indexOf,
   filter,
   partition,
+  concat,
 }
