@@ -14,6 +14,8 @@ import pop       from './pop'
 import indexOf   from './indexOf'
 import filter    from './filter'
 import concat    from './concat'
+import every     from './every'
+import some      from './some'
 import partition from './partition'
 
 
@@ -33,6 +35,8 @@ export {
   filter,
   partition,
   concat,
+  every,
+  some,
 }
 
 
@@ -51,4 +55,6 @@ export default {
   filter,
   partition,
   concat,
+  every,
+  some,
 }

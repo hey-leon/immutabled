@@ -73,3 +73,11 @@ test('exports: concat is included', t => {
   t.true(list.concat instanceof Function)
 })
 
+test('exports: every is included', t => {
+  t.true(list.every instanceof Function)
+})
+
+
+test('exports: some is included', t => {
+  t.true(list.some instanceof Function)
+})

@@ -9,6 +9,7 @@ import {
   _,
 } from '../../source/utils/curry.js'
 
+
 test('list#concat: should be curryable', t => {
   t.is(concat(_), concat)
 })
