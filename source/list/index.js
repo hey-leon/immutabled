@@ -11,6 +11,7 @@ import set       from './set'
 import update    from './update'
 import push      from './push'
 import pop       from './pop'
+import indexOf   from './indexOf'
 import filter    from './filter'
 import partition from './partition'
 
@@ -27,6 +28,7 @@ export {
   update,
   push,
   pop,
+  indexOf,
   filter,
   partition,
 }
@@ -43,6 +45,7 @@ export default {
   update,
   push,
   pop,
+  indexOf,
   filter,
   partition,
 }

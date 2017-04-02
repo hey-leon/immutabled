@@ -49,6 +49,16 @@ test('exports: push is included', t => {
 })
 
 
+test('exports: pop is included', t => {
+  t.true(list.pop instanceof Function)
+})
+
+
+test('exports: indexOf is included', t => {
+  t.true(list.indexOf instanceof Function)
+})
+
+
 test('exports: partition is included', t => {
   t.true(list.partition instanceof Function)
 })
@@ -59,6 +69,3 @@ test('exports: filter is included', t => {
 })
 
 
-test('exports: pop is included', t => {
-  t.true(list.pop instanceof Function)
-})
