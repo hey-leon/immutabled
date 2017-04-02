@@ -1,6 +1,6 @@
 // @flow
 
-import symbols from '../consts/symbols'
+import symbols   from '../consts/symbols'
 
 import of        from './of'
 import apply     from '../immut/apply'
@@ -11,6 +11,7 @@ import set       from './set'
 import update    from './update'
 import push      from './push'
 import pop       from './pop'
+import filter    from './filter'
 import partition from './partition'
 
 
@@ -26,6 +27,7 @@ export {
   update,
   push,
   pop,
+  filter,
   partition,
 }
 
@@ -41,5 +43,6 @@ export default {
   update,
   push,
   pop,
+  filter,
   partition,
 }

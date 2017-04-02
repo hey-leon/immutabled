@@ -54,6 +54,11 @@ test('exports: partition is included', t => {
 })
 
 
+test('exports: filter is included', t => {
+  t.true(list.filter instanceof Function)
+})
+
+
 test('exports: pop is included', t => {
   t.true(list.pop instanceof Function)
 })
