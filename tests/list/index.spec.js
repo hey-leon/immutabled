@@ -106,3 +106,8 @@ test('exports: map is included', t => {
 test('exports: fold is included', t => {
   t.true(list.fold instanceof Function)
 })
+
+
+test('exports: sort is included', t => {
+  t.true(list.sort instanceof Function)
+})

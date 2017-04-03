@@ -22,6 +22,9 @@ import has       from './has'
 import partition from './partition'
 import map       from './map'
 import fold      from './fold'
+import sort      from './sort'
+
+
 
 
 export const type = symbols.list
@@ -47,6 +50,7 @@ export {
   has,
   map,
   fold,
+  sort,
 }
 
 
@@ -72,4 +76,5 @@ export default {
   has,
   map,
   fold,
+  sort,
 }
