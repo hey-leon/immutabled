@@ -97,6 +97,12 @@ test('exports: has is included', t => {
   t.true(list.has instanceof Function)
 })
 
+
 test('exports: map is included', t => {
   t.true(list.map instanceof Function)
+})
+
+
+test('exports: fold is included', t => {
+  t.true(list.fold instanceof Function)
 })

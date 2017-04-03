@@ -21,6 +21,7 @@ import some      from './some'
 import has       from './has'
 import partition from './partition'
 import map       from './map'
+import fold      from './fold'
 
 
 export const type = symbols.list
@@ -45,6 +46,7 @@ export {
   findIndex,
   has,
   map,
+  fold,
 }
 
 
@@ -69,4 +71,5 @@ export default {
   findIndex,
   has,
   map,
+  fold,
 }
