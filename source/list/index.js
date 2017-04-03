@@ -18,6 +18,7 @@ import findIndex from './findIndex'
 import concat    from './concat'
 import every     from './every'
 import some      from './some'
+import has       from './has'
 import partition from './partition'
 
 
@@ -41,6 +42,7 @@ export {
   some,
   find,
   findIndex,
+  has,
 }
 
 
@@ -63,4 +65,5 @@ export default {
   some,
   find,
   findIndex,
+  has,
 }
