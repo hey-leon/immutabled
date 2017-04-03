@@ -20,6 +20,7 @@ import every     from './every'
 import some      from './some'
 import has       from './has'
 import partition from './partition'
+import map       from './map'
 
 
 export const type = symbols.list
@@ -43,6 +44,7 @@ export {
   find,
   findIndex,
   has,
+  map,
 }
 
 
@@ -66,4 +68,5 @@ export default {
   find,
   findIndex,
   has,
+  map,
 }
