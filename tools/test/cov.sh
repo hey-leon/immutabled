@@ -1,5 +1,7 @@
+export NODE_ENV=common
+
 # source env keys
-source ./tools/env/keys.sh
+source ./tools/env/secret.keys
 
 #
 # generate and post coverage

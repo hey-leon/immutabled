@@ -18,12 +18,11 @@
     "url": "https://github.com/leonp1991/immut.git"
   },
   "scripts": {
-    "build": "source tools/env/production.sh && babel source -d build",
-    "test": "source ./tools/env/testing.sh && ava -w",
-    "test:once": "source ./tools/env/testing.sh && ava",
-    "test:cov": "source ./tools/env/testing.sh && nyc ava ; rm -rf .nyc_output",
-    "open:test": "open ./docs/test/index.html",
-    "cov:report": "./tools/test/cov:report.sh"
+    "build": "./tools/build/pub.sh",
+    "test": "./tools/test/test.sh",
+    "test:once": "./tools/test/once.sh",
+    "test:cov": "./tools/test/cov.sh",
+    "open:test": "open ./docs/test/index.html"
   },
   "ava": {
     "files": [

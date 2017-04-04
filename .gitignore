@@ -1,9 +1,11 @@
-tools/env/keys.sh
-
-build/**/*
-docs/**/*
-
-node_modules
-
+# ide's and personal configs
 .vscode
 .idea
+
+# project build targets
+node_modules
+build
+docs
+
+# secret files
+**/*.keys

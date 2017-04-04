@@ -1,14 +1,28 @@
 {
-  "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["> 5%"]
-      }
-    }]
-  ],
   "plugins": [
     "babel-plugin-transform-flow-strip-types",
     "transform-object-rest-spread"
   ],
-  "sourceMaps": "inline"
+  "sourceMaps": "inline",
+  "env": {
+    "module": {
+      "presets": [
+        ["env", {
+          "modules": false,
+          "targets": {
+            "browsers": ["> 5%"]
+          }
+        }]
+      ]
+    },
+    "common": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "browsers": ["> 5%"]
+          }
+        }]
+      ]
+    }
+  }
 }
