@@ -3,23 +3,13 @@
     "babel-plugin-transform-flow-strip-types",
     "transform-object-rest-spread"
   ],
-  "sourceMaps": "inline",
   "env": {
-    "module": {
-      "presets": [
-        ["env", {
-          "modules": false,
-          "targets": {
-            "browsers": ["> 5%"]
-          }
-        }]
-      ]
-    },
-    "common": {
+    "umd": {
+      "sourceMaps": "inline",
       "presets": [
         ["env", {
           "targets": {
-            "browsers": ["> 5%"]
+            "browsers": ["> 2%"]
           }
         }]
       ]

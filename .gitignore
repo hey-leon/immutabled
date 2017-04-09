@@ -4,8 +4,13 @@
 
 # project build targets
 node_modules
-build
+umd
+es
 docs
 
 # secret files
 **/*.keys
+
+
+# os files
+.DS_Store
