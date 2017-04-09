@@ -1,5 +1,5 @@
 {
-  "name": "immut",
+  "name": "immutabled",
   "version": "0.0.1",
   "main": "umd/index.js",
   "scripts": {
