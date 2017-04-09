@@ -1,4 +1,4 @@
-export NODE_ENV=common
+export NODE_ENV=testing
 
 # source env keys
 source ./tools/env/secret.keys

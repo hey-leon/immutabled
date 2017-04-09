@@ -5,6 +5,9 @@ import symbols from '../consts/symbols'
 type isType = (u: any) => boolean
 
 
+export const isImmut: isType = u => u && Object.values(symbols).includes(u.__type__)
+
+
 export const isList: isType = u => !!u && u.__type__ === symbols.list
 
 

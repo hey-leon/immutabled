@@ -3,6 +3,7 @@ import test from 'ava'
 import symbols from '../../source/consts/symbols'
 
 import {
+  isImmut,
   isList,
   isMap,
   isArray,
@@ -11,7 +12,20 @@ import {
 } from '../../source/utils/is'
 
 
-test('is#list: should only return true for list', t => {
+test('#isImmut: should only return true for list', t => {
+  t.false(isImmut())
+  t.false(isImmut(null))
+  t.false(isImmut(1))
+  t.false(isImmut(''))
+  t.false(isImmut(NaN))
+  t.false(isImmut([]))
+  t.false(isImmut({}))
+  t.true(isImmut({ __type__: symbols.map }))
+  t.true(isImmut({ __type__: symbols.list }))
+})
+
+
+test('#isList: should only return true for list', t => {
   t.false(isList())
   t.false(isList(null))
   t.false(isList(1))
@@ -24,7 +38,7 @@ test('is#list: should only return true for list', t => {
 })
 
 
-test('is#map: should only return true for map', t => {
+test('#isMap: should only return true for map', t => {
   t.false(isMap())
   t.false(isMap(null))
   t.false(isMap(1))
@@ -37,7 +51,7 @@ test('is#map: should only return true for map', t => {
 })
 
 
-test('is#array: should only return true for array', t => {
+test('#isArray: should only return true for array', t => {
   t.false(isArray())
   t.false(isArray(null))
   t.false(isArray(1))
@@ -50,7 +64,7 @@ test('is#array: should only return true for array', t => {
 })
 
 
-test('is#object: should only return true for object', t => {
+test('#isObject: should only return true for object', t => {
   t.false(isObject())
   t.false(isObject(null))
   t.false(isObject(1))
@@ -63,7 +77,7 @@ test('is#object: should only return true for object', t => {
 })
 
 
-test('is#primitive: should only return true for primitive', t => {
+test('#isPrimitive: should only return true for primitive', t => {
   t.false(isPrimitive())
   t.false(isPrimitive(null))
   t.false(isPrimitive([]))
