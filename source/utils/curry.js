@@ -6,13 +6,13 @@ import type { Func } from '../consts/types'
 export const _: Symbol = Symbol.for('no_bind')
 
 
-export const noBind: Symbol => boolean = s => s === Symbol.for('no_bind')
+export const noBind: (s: Symbol) => boolean = s => s === Symbol.for('no_bind')
 
 
-export const curry: Func => Func = f => curryn[f.length](f)
+export const curry: (f: Func) => Func = f => curryn[f.length](f)
 
 
-export const curry1: Func => Func =
+export const curry1: (f: Func) => Func =
   f => function c1(a) {
     switch (arguments.length) {
       case 0:
@@ -23,7 +23,7 @@ export const curry1: Func => Func =
   }
 
 
-export const curry2: Func => Func =
+export const curry2: (f: Func) => Func =
   f => function c2(a, b) {
     switch (arguments.length) {
       case 0:
@@ -39,7 +39,7 @@ export const curry2: Func => Func =
   }
 
 
-export const curry3: Func => Func =
+export const curry3: (f: Func) => Func =
   f => function c3(a, b, c) {
     switch (arguments.length) {
       case 0:

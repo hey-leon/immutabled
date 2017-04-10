@@ -1,10 +1,10 @@
 // @flow
 
 
-/**
- * implementation for flow types
- * @author Leon Pearce <leonp1991@gmail.com>
- */
+//
+// implementation for flow types
+// @author Leon Pearce <leonp1991@gmail.com>
+//
 
 
 //---------------------------- immut data types -----------------------------//

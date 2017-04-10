@@ -26,7 +26,7 @@ import type { Immut, Func } from '../consts/types'
  * @param {any[]} ks of the path to apply to
  * @param {Func} f to apply
  */
-export const apply: (Immut, any[], Func) => Immut | void =
+export const apply: (i: Immut, any[], f: Func) => Immut | void =
   (i, [ k, ...ks ], f) =>
 
     isList(i)

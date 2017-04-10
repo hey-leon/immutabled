@@ -1,10 +1,11 @@
 // @flow
 
 
-/**
- * implementation for Map#set
- * @author Leon Pearce <leonp1991@gmail.com>
- */
+//
+// implementation for Map#set
+// @author Leon Pearce <leonp1991@gmail.com>
+// @version 0.0.1
+//
 
 
 import { curry }  from '../utils/curry'
@@ -14,10 +15,11 @@ import type { Map } from '../consts/types'
 
 
 /**
- * @param {Map} m to set value on
- * @param {any} k is the key of the value to get
- * @param {any} v to set on map
- * @returns a node a copy of the node value
+ * @name map#set
+ * @param   {Map} m to set value on
+ * @param   {any} k is the key of the value to get
+ * @param   {any} v to set on map
+ * @returns {Map} an updated copy
  */
 export const set: (m: Map, k: any, v: any) => Map =
   (m, k, v) => update(m, k, () => v)

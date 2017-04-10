@@ -1,10 +1,11 @@
 // @flow
 
 
-/**
- * implementation for Map#update
- * @author Leon Pearce <leonp1991@gmail.com>
- */
+//
+// implementation for Map#update
+// @author Leon Pearce <leonp1991@gmail.com>
+// @version 0.0.1
+//
 
 
 import symbols from '../consts/symbols'
@@ -15,9 +16,11 @@ import type { Map, Func } from '../consts/types'
 
 
 /**
- * @param {Map}  m to set value on
- * @param {any}  k is the key of the value to get
- * @param {Func} f to update value on map
+ * @name map#update
+ * @param   {Map} m to set value on
+ * @param   {any} k is the key of the value to get
+ * @param   {Func} f to update value on map
+ * @returns {Map} an updated copy
  */
 export const update: (m: Map, k: any, f: Func) => Map =
   (m, k, f) => ({

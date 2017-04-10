@@ -51,6 +51,7 @@
     "babel-preset-env": "latest",
     "babel-register": "latest",
     "codecov": "latest",
+    "documentation": "git+https://github.com/documentationjs/documentation.git",
     "eslint": "latest",
     "eslint-loader": "latest",
     "eslint-plugin-flowtype": "latest",
