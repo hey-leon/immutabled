@@ -1,22 +1,15 @@
 // @flow
-
-
-//
-// implementation for Map#of
-// author: Leon Pearce <leonp1991@gmail.com>
-// version: 0.0.1
-//
-
-
-import symbols from '../consts/symbols'
-
 import type { Map } from '../consts/types'
+import symbols      from '../consts/symbols'
 
 
 /**
- * @name map#of
- * @param   {any[]|Map} s of data to build map from
- * @returns {Map} from data
+ * constructs an immutable map from a map like structure.
+ *
+ * @name map.of
+ * @param  {Map|Object} s map like structure
+ * @return {Map} immutable map
+ * @since 0.0.1
  */
 export const of: (s?: Map | Object) => Map =
   (s={}) => s.__type__ === symbols.map

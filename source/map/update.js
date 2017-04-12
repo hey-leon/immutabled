@@ -1,26 +1,21 @@
 // @flow
-
-
-//
-// implementation for Map#update
-// @author Leon Pearce <leonp1991@gmail.com>
-// @version 0.0.1
-//
-
-
-import symbols from '../consts/symbols'
-
-import { curry } from '../utils/curry'
-
 import type { Map, Func } from '../consts/types'
+import { curry }          from '../utils/curry'
+import symbols            from '../consts/symbols'
 
 
 /**
- * @name map#update
- * @param   {Map} m to set value on
- * @param   {any} k is the key of the value to get
- * @param   {Func} f to update value on map
- * @returns {Map} an updated copy
+ * takes a key and an updater fn. if the key exists on the map
+ * the current value the updater fn is called with the value,
+ * else with no params. whatever the updater returns is
+ * set as the new value on the map for the key.
+ *
+ * @name map.update
+ * @param  {Map}  m to set value on
+ * @param  {any}  k is the key of the value to get
+ * @param  {Func} f to update value on map
+ * @return {Map}  an updated copy
+ * @since 0.0.1
  */
 export const update: (m: Map, k: any, f: Func) => Map =
   (m, k, f) => ({
