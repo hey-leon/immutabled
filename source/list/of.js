@@ -1,19 +1,16 @@
 // @flow
-
-
-/**
- * implementation for List#of
- * @author Leon Pearce <leonp1991@gmail.com>
- */
-
-
-import symbols from '../consts/symbols'
-
 import type { List } from '../consts/types'
+import symbols       from '../consts/symbols'
 
 
 /**
- * @param {any[]|List} s of data to build list from
+ * takes a list like type and constructs a new
+ * list.
+ *
+ * @name list.of
+ * @param  {any[]|List} s of data to build list from
+ * @return {List}
+ * @since 0.0.1
  */
 export const of: (s?: List | any[]) => List =
   (s=[]) => Array.isArray(s)

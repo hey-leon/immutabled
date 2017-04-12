@@ -19,7 +19,7 @@ import concat    from './concat'
 import every     from './every'
 import some      from './some'
 import has       from './has'
-// import partition from './partition'
+import partition from './partition'
 import map       from './map'
 import fold      from './fold'
 import sort      from './sort'
@@ -41,7 +41,7 @@ export {
   pop,
   indexOf,
   filter,
-  // partition,
+  partition,
   concat,
   every,
   some,

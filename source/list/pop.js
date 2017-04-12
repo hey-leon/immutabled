@@ -1,20 +1,16 @@
 // @flow
-
-
-/**
- * implementation for List#pop
- * @author Leon Pearce <leonp1991@gmail.com>
- */
-
-
-import { of }    from './of'
-import { curry } from '../utils/curry'
-
 import type { List } from '../consts/types'
+import { curry }     from '../utils/curry'
+import { of }        from './of'
 
 
 /**
- * @param {List} l push value on
+ * takes a list and returns a new list minus the last entity
+ *
+ * @name list.pop
+ * @param  {List} l push value on
+ * @return {List} with all values same as list minus the last entity
+ * @since 0.0.1
  */
 export const pop: (l: List) => List =
   l => {
