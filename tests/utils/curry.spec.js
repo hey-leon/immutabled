@@ -2,7 +2,7 @@ import test from 'ava'
 
 import {
   _,
-  noBind,
+  isNoBind,
   curry,
   curry1,
   curry2,
@@ -15,18 +15,18 @@ test('_: should === Symbol.for("no_bind"', t => {
 })
 
 
-test('#noBind: should return true if arg === no bind', t => {
-  t.true(noBind(_))
+test('#isNoBind: should return true if arg === no bind', t => {
+  t.true(isNoBind(_))
 })
 
 
-test('#noBind: should return false if arg !== no bind', t => {
-  t.false(noBind('_'))
-  t.false(noBind(2))
-  t.false(noBind([]))
-  t.false(noBind({}))
-  t.false(noBind(Symbol('rand')))
-  t.false(noBind(f => f))
+test('#isNoBind: should return false if arg !== no bind', t => {
+  t.false(isNoBind('_'))
+  t.false(isNoBind(2))
+  t.false(isNoBind([]))
+  t.false(isNoBind({}))
+  t.false(isNoBind(Symbol('rand')))
+  t.false(isNoBind(f => f))
 })
 
 

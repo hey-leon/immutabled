@@ -3,10 +3,10 @@
 import type { Symbols } from './types'
 
 
-//
-// all immutables must contain a __type__, which
-// will have its own symbol on this map
-//
+/**
+ * @type {Symbols} symbols of all immutabled types
+ * @since 0.0.1
+ */
 const symbols: Symbols = {
   list: '__immut_list__',
   map:  '__immut_map__',
