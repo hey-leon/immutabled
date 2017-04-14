@@ -6,6 +6,7 @@ import of        from './of'
 import apply     from '../immut/apply'
 import size      from '../immut/size'
 import data      from '../immut/data'
+import del       from './del'
 import get       from '../immut/get'
 import set       from './set'
 import update    from './update'
@@ -34,6 +35,7 @@ export {
   apply,
   size,
   data,
+  del,
   get,
   set,
   update,
@@ -60,6 +62,7 @@ export default {
   apply,
   size,
   data,
+  del,
   get,
   set,
   update,

@@ -23,6 +23,10 @@ test('exports: size is included', t => {
   t.true(list.size instanceof Function)
 })
 
+test('exports: del is included', t => {
+  t.true(list.del instanceof Function)
+})
+
 
 test('exports: data is included', t => {
   t.true(list.data instanceof Function)

@@ -1,17 +1,23 @@
 {
-  "plugins": [
-    "babel-plugin-transform-flow-strip-types",
-    "transform-object-rest-spread"
-  ],
   "env": {
     "umd": {
-      "sourceMaps": "inline",
+      "plugins": [
+        "babel-plugin-transform-flow-strip-types",
+        "transform-object-rest-spread"
+      ],
       "presets": [
         ["env", {
           "targets": {
             "browsers": ["> 2%"]
           }
         }]
+      ]
+    },
+    "es": {
+      "sourceMaps": "inline",
+      "plugins": [
+        "babel-plugin-transform-flow-strip-types",
+        "transform-object-rest-spread"
       ]
     }
   }
