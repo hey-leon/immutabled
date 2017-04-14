@@ -12,7 +12,7 @@ import {
 } from '../../source/utils/is'
 
 
-test('#isImmut: should only return true for list', t => {
+test('#isImmut: should only return true for immut tyoes', t => {
   t.false(isImmut())
   t.false(isImmut(null))
   t.false(isImmut(1))

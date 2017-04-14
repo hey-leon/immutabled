@@ -13,7 +13,7 @@ type isType = (u: any) => boolean
  * @return {bool} whether the entity is an immutabled type
  * @since 0.0.1
  */
-export const isImmut: isType = u => u && Object.values(symbols).includes(u.__type__)
+export const isImmut: isType = u => !!u && Object.values(symbols).includes(u.__type__)
 
 
 /**
