@@ -1,6 +1,6 @@
 {
   "name": "immutabled",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "umd/index.js",
   "scripts": {
     "build": "./tools/build/script.sh",
