@@ -23,7 +23,7 @@ test('list#pop: should pop new value', t => {
     __size__: 4,
   }
 
-  const l2 = pop(l1, v)
+  const l2 = pop(l1)
 
   t.true(testRefs(l1, l2, [k]))
   t.is(l1.__data__[k], v)
