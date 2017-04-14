@@ -1,7 +1,7 @@
-export NODE_ENV=testing
+export NODE_ENV=umd
 
 # source env keys
-source ./tools/env/secret.keys
+source ./tools/secret.keys
 
 #
 # generate and post coverage
