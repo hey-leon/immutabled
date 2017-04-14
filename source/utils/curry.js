@@ -4,6 +4,8 @@ import type { Func } from '../consts/types'
 
 
 /**
+ * _ is used as a no bind for partial application.
+ *
  * @type {Symbol} _ no bind symbol
  * @since 0.0.1
  */

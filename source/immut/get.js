@@ -1,22 +1,19 @@
 // @flow
-
-
-/**
- * implementation for Immut#get
- * @author Leon Pearce <leonp1991@gmail.com>
- */
-
-
-import { curry }        from '../utils/curry'
 import { runtimeError } from '../utils/helpers'
-
-import type { Immut } from '../consts/types'
+import { curry }        from '../utils/curry'
+import type { Immut }   from '../consts/types'
 
 
 /**
- * @param {Immut} i immutable species
- * @param {any}   k of member
- * @returns a node a copy of the node value
+ * takes an immutable collection and a key and
+ * returns the entity from the collection that
+ * the key refences.
+ *
+ * @name immut.get
+ * @param  {Immut} i immutable species
+ * @param  {any}   k of member
+ * @return {any} an entity from the collection
+ * @since 0.0.1
  */
 export const get: (i: Immut, k: any) => any =
   (i, k) => k in i.__data__

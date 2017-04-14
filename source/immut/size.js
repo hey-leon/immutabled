@@ -1,17 +1,15 @@
 // @flow
-
-
-/**
- * implementation for Immut#size
- * @author Leon Pearce <leonp1991@gmail.com>
- */
-
-
 import type { Immut } from '../consts/types'
 
 
 /**
- * @param {Immut} i to find size of
+ * takes an immutable and returns the size of the
+ * collection.
+ *
+ * @name immut.size
+ * @param  {Immut} i to find size of
+ * @return {number} size of immutable collection
+ * @since 0.0.1
  */
 export const size: (i: Immut) => number = i => i.__size__
 
