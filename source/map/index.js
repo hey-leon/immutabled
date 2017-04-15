@@ -1,45 +1,46 @@
 // @flow
-
-import symbols   from '../consts/symbols'
-
-import of        from './of'
 import apply     from '../immut/apply'
-import size      from '../immut/size'
 import data      from '../immut/data'
+import del       from './del'
 import get       from '../immut/get'
-import set       from './set'
-import update    from './update'
 import merge     from './merge'
+import of        from './of'
 import partition from './partition'
 import pluck     from './pluck'
+import set       from './set'
+import size      from '../immut/size'
+import symbols   from '../consts/symbols'
+import update    from './update'
 
 
 export const type = symbols.map
 
 export {
-  of,
   apply,
-  size,
   data,
+  del,
   get,
-  set,
-  update,
   merge,
+  of,
   partition,
   pluck,
+  set,
+  size,
+  update,
 }
 
 
 export default {
-  type,
-  of,
   apply,
-  size,
   data,
+  del,
   get,
-  set,
-  update,
   merge,
+  of,
   partition,
   pluck,
+  set,
+  size,
+  type,
+  update,
 }
