@@ -1,83 +1,78 @@
 // @flow
-
-import symbols   from '../consts/symbols'
-
-import of        from './of'
 import apply     from '../immut/apply'
-import size      from '../immut/size'
+import concat    from './concat'
 import data      from '../immut/data'
 import del       from './del'
-import get       from '../immut/get'
-import set       from './set'
-import update    from './update'
-import push      from './push'
-import pop       from './pop'
-import indexOf   from './indexOf'
+import every     from './every'
 import filter    from './filter'
 import find      from './find'
 import findIndex from './findIndex'
-import concat    from './concat'
-import every     from './every'
-import some      from './some'
-import has       from './has'
-import partition from './partition'
-import map       from './map'
 import fold      from './fold'
+import get       from '../immut/get'
+import has       from './has'
+import indexOf   from './indexOf'
+import map       from './map'
+import of        from './of'
+import partition from './partition'
+import pop       from './pop'
+import push      from './push'
+import set       from './set'
+import size      from '../immut/size'
+import some      from './some'
 import sort      from './sort'
-
-
-
+import symbols   from '../consts/symbols'
+import update    from './update'
 
 export const type = symbols.list
 
 export {
-  of,
   apply,
-  size,
+  concat,
   data,
   del,
-  get,
-  set,
-  update,
-  push,
-  pop,
-  indexOf,
-  filter,
-  partition,
-  concat,
   every,
-  some,
+  filter,
   find,
   findIndex,
-  has,
-  map,
   fold,
+  get,
+  has,
+  indexOf,
+  map,
+  of,
+  partition,
+  pop,
+  push,
+  set,
+  size,
+  some,
   sort,
+  update,
 }
 
 
 export default {
-  type: symbols.list,
-  of,
   apply,
-  size,
+  concat,
   data,
   del,
-  get,
-  set,
-  update,
-  push,
-  pop,
-  indexOf,
-  filter,
-  partition,
-  concat,
   every,
-  some,
+  filter,
   find,
   findIndex,
-  has,
-  map,
   fold,
+  get,
+  has,
+  indexOf,
+  map,
+  of,
+  partition,
+  pop,
+  push,
+  set,
+  size,
+  some,
   sort,
+  type,
+  update,
 }

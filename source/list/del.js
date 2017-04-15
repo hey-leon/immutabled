@@ -10,7 +10,8 @@ import { of }        from './of'
  *
  * @name list.del
  * @param  {List} l to delete value from
- * @return {List} i index to delete the value at
+ * @param  {number} i index to delete the value at
+ * @return {List} without value at i
  * @since 0.0.3
  */
 export const del: (l: List, i: number) => List =
