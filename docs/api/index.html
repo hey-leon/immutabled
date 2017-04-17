@@ -1,0 +1,3953 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>immutabled 0.0.2 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='max-width-4 mx-auto'>
+    <div class='clearfix md-mxn2'>
+      <div class='fixed xs-hide fix-3 overflow-auto max-height-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>immutabled</h3>
+          <div class='mb1'><code>0.0.2</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#rotate'
+                  class="">
+                  rotate
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#_'
+                  class="">
+                  _
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isnobind'
+                  class="">
+                  isNoBind
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#curry'
+                  class="">
+                  curry
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#curry1'
+                  class="">
+                  curry1
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#curry2'
+                  class="">
+                  curry2
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#curry3'
+                  class="">
+                  curry3
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#curryn'
+                  class="">
+                  curryn
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isimmut'
+                  class="">
+                  isImmut
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#islist'
+                  class="">
+                  isList
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#ismap'
+                  class="">
+                  isMap
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isarray'
+                  class="">
+                  isArray
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isobject'
+                  class="">
+                  isObject
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#isprimitive'
+                  class="">
+                  isPrimitive
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#immutparse'
+                  class="">
+                  immut.parse
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#immutapply'
+                  class="">
+                  immut.apply
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#immutsize'
+                  class="">
+                  immut.size
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#immutdata'
+                  class="">
+                  immut.data
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#immutget'
+                  class="">
+                  immut.get
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mapof'
+                  class="">
+                  map.of
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mapset'
+                  class="">
+                  map.set
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mapupdate'
+                  class="">
+                  map.update
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mapmerge'
+                  class="">
+                  map.merge
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mappartition'
+                  class="">
+                  map.partition
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#mappluck'
+                  class="">
+                  map.pluck
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#symbols'
+                  class="">
+                  symbols
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listof'
+                  class="">
+                  list.of
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listset'
+                  class="">
+                  list.set
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listupdate'
+                  class="">
+                  list.update
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listpush'
+                  class="">
+                  list.push
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listpop'
+                  class="">
+                  list.pop
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listindexof'
+                  class="">
+                  list.indexOf
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listfilter'
+                  class="">
+                  list.filter
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listfind'
+                  class="">
+                  list.find
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listfindindex'
+                  class="">
+                  list.findIndex
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listconcat'
+                  class="">
+                  list.concat
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listevery'
+                  class="">
+                  list.every
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listsome'
+                  class="">
+                  list.some
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listhas'
+                  class="">
+                  list.has
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listpartition'
+                  class="">
+                  list.partition
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listmap'
+                  class="">
+                  list.map
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listfold'
+                  class="">
+                  list.fold
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#listsort'
+                  class="">
+                  list.sort
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div class='fix-margin-3'>
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='rotate'>
+      rotate
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes an array of elements and rotates the values,
+such that the first element is shifted to the end.</p>
+
+
+  <div class='pre p1 fill-light mt0'>rotate($0: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$0</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.x</span> <code class='quiet'>any</code>
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$0.xs</span> <code class='quiet'>...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any></code>
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any></code>
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='_'>
+      _
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>_ is used as a no bind for partial application.</p>
+
+
+  <div class='pre p1 fill-light mt0'>_</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Symbol</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isnobind'>
+      isNoBind
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if entity is no bind symbol</p>
+
+
+  <div class='pre p1 fill-light mt0'>isNoBind</div>
+  
+    <p>
+      Type:
+      function (u: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    to be identified if is no bind symbol
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether entity is no bind
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='curry'>
+      curry
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a function of 1..3 args and returns a curried version</p>
+
+
+  <div class='pre p1 fill-light mt0'>curry</div>
+  
+    <p>
+      Type:
+      function (f: Func): Func
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to be curried
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Func</code>:
+        a curried version of f
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='curry1'>
+      curry1
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a function of 1 args and returns a curried version</p>
+
+
+  <div class='pre p1 fill-light mt0'>curry1</div>
+  
+    <p>
+      Type:
+      function (f: Func): Func
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to be curried
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Func</code>:
+        a curried version of f
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='curry2'>
+      curry2
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a function of 2 args and returns a curried version</p>
+
+
+  <div class='pre p1 fill-light mt0'>curry2</div>
+  
+    <p>
+      Type:
+      function (f: Func): Func
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to be curried
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Func</code>:
+        a curried version of f
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='curry3'>
+      curry3
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a function of 3 args and returns a curried version</p>
+
+
+  <div class='pre p1 fill-light mt0'>curry3</div>
+  
+    <p>
+      Type:
+      function (f: Func): Func
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to be curried
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Func</code>:
+        a curried version of f
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='curryn'>
+      curryn
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>curryn</div>
+  
+    <p>
+      Type:
+      {}
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isimmut'>
+      isImmut
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if u is an immutabled type</p>
+
+
+  <div class='pre p1 fill-light mt0'>isImmut</div>
+  
+    <p>
+      Type:
+      isType
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    entity to identify if is an immutabled type
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether the entity is an immutabled type
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='islist'>
+      isList
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if u is a list type</p>
+
+
+  <div class='pre p1 fill-light mt0'>isList</div>
+  
+    <p>
+      Type:
+      isType
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    entity to identify if is a list type
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether the entity is a list type
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='ismap'>
+      isMap
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if u is a map type</p>
+
+
+  <div class='pre p1 fill-light mt0'>isMap</div>
+  
+    <p>
+      Type:
+      isType
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    entity to identify if is a map type
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether the entity is a map type
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isarray'>
+      isArray
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if u is an array type</p>
+
+
+  <div class='pre p1 fill-light mt0'>isArray</div>
+  
+    <p>
+      Type:
+      isType
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    entity to identify if is an array type
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether the entity is an array type
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isobject'>
+      isObject
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if u is an object type</p>
+
+
+  <div class='pre p1 fill-light mt0'>isObject</div>
+  
+    <p>
+      Type:
+      isType
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    entity to identify if is an object type
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether the entity is an object type
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='isprimitive'>
+      isPrimitive
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>identifies if u is a primitive type</p>
+
+
+  <div class='pre p1 fill-light mt0'>isPrimitive</div>
+  
+    <p>
+      Type:
+      isType
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>u</span> <code class='quiet'>(any)</code>
+	    entity to identify if is a primitive type
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether the entity is a primitive type
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='immutparse'>
+      immut.parse
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a shape template and JSON like data and parses
+it to match the shape.</p>
+
+
+  <div class='pre p1 fill-light mt0'>immut.parse</div>
+  
+    <p>
+      Type:
+      function (s: (Shape | any), d: any): (Immut | Leaf | void)
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>s</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    template of the shape
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>d</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    to parse
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(Immut | Leaf | void)</code>:
+        the data parsed to match the shape
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='immutapply'>
+      immut.apply
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes an immutable, a key array, and an updater, and
+applies the updater function to the entity at the
+key path.</p>
+
+
+  <div class='pre p1 fill-light mt0'>immut.apply</div>
+  
+    <p>
+      Type:
+      function (i: Immut, ks: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>, f: Func): (Immut | void)
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>i</span> <code class='quiet'>(Immut)</code>
+	    to apply f to
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>ks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</code>
+	    of the path to apply to
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to apply
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>$1</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+          <table class='mt1 mb2 fixed-table h5 col-12'>
+            <colgroup>
+              <col width='30%' />
+              <col width='70%' />
+            </colgroup>
+            <thead>
+              <tr class='bold fill-light'>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class='mt1'>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$1.k</span> <code class='quiet'>any</code>
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
+              
+                <tr>
+                  <td class='break-word'><span class='code bold'>$1.ks</span> <code class='quiet'>...any</code>
+                  </td>
+                  <td class='break-word'><span></span></td>
+                </tr>
+              
+            </tbody>
+          </table>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>Immut</code>:
+        the copy of the immutable with the updated value
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='immutsize'>
+      immut.size
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes an immutable and returns the size of the
+collection.</p>
+
+
+  <div class='pre p1 fill-light mt0'>immut.size</div>
+  
+    <p>
+      Type:
+      function (i: Immut): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>i</span> <code class='quiet'>(Immut)</code>
+	    to find size of
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        size of immutable collection
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='immutdata'>
+      immut.data
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes an immutable collection and returns
+the raw pojo data.</p>
+
+
+  <div class='pre p1 fill-light mt0'>immut.data</div>
+  
+    <p>
+      Type:
+      function (i: Immut): any
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>i</span> <code class='quiet'>(Immut)</code>
+	    immutable species
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        a reference to the immut's data
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='immutget'>
+      immut.get
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes an immutable collection and a key and
+returns the entity from the collection that
+the key refences.</p>
+
+
+  <div class='pre p1 fill-light mt0'>immut.get</div>
+  
+    <p>
+      Type:
+      function (i: Immut, k: any): any
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>i</span> <code class='quiet'>(Immut)</code>
+	    immutable species
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>k</span> <code class='quiet'>(any)</code>
+	    of member
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        an entity from the collection
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mapof'>
+      map.of
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>constructs an immutable map from a map like structure.</p>
+
+
+  <div class='pre p1 fill-light mt0'>map.of</div>
+  
+    <p>
+      Type:
+      function (s: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>s</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)?= {})</code>
+	    map like structure
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></code>:
+        immutable map
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mapset'>
+      map.set
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a key and a value and sets the key on the map
+with the value.</p>
+
+
+  <div class='pre p1 fill-light mt0'>map.set</div>
+  
+    <p>
+      Type:
+      function (m: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, k: any, v: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>m</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>)</code>
+	    to set value on
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>k</span> <code class='quiet'>(any)</code>
+	    is the key of the value to get
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    to set on map
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></code>:
+        an updated copy
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mapupdate'>
+      map.update
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a key and an updater fn. if the key exists on the map
+the current value the updater fn is called with the value,
+else with no params. whatever the updater returns is
+set as the new value on the map for the key.</p>
+
+
+  <div class='pre p1 fill-light mt0'>map.update</div>
+  
+    <p>
+      Type:
+      function (m: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, k: any, f: Func): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>m</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>)</code>
+	    to set value on
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>k</span> <code class='quiet'>(any)</code>
+	    is the key of the value to get
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to update value on map
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></code>:
+        an updated copy
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mapmerge'>
+      map.merge
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>merges two immutable maps. if the two maps contain a key
+that is the same, the second maps value will be used</p>
+
+
+  <div class='pre p1 fill-light mt0'>map.merge</div>
+  
+    <p>
+      Type:
+      function (m1: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, m2: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>m1</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>)</code>
+	    to merge onto
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>m2</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>)</code>
+	    to merge with
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a></code>:
+        of merged maps
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mappartition'>
+      map.partition
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a predicate and uses it to partition the map into a
+map pair. for each entity if the predicate returns true
+the entity will be in the first map, else the second.</p>
+
+
+  <div class='pre p1 fill-light mt0'>map.partition</div>
+  
+    <p>
+      Type:
+      function (m: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, f: Func): [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>]
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>m</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>)</code>
+	    map to partition
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>]</code>:
+        pair of maps, left true, right false
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='mappluck'>
+      map.pluck
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes an array of keys and returns an object with the members
+corresponding to the keys.</p>
+
+
+  <div class='pre p1 fill-light mt0'>map.pluck</div>
+  
+    <p>
+      Type:
+      function (m: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, ks: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>m</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>)</code>
+	    to pluck values of
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>ks</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    to get values of
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        containing ks with value of map
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='symbols'>
+      symbols
+    </h3>
+    
+    
+  </div>
+  
+
+  
+
+  <div class='pre p1 fill-light mt0'>symbols</div>
+  
+    <p>
+      Type:
+      Symbols
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listof'>
+      list.of
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list like type and constructs a new
+list.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.of</div>
+  
+    <p>
+      Type:
+      function (s: (List | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>s</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any> | List)?= [])</code>
+	    of data to build list from
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listset'>
+      list.set
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list, an index and a value. returns
+a new list with the value at the index set
+as the new value.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.set</div>
+  
+    <p>
+      Type:
+      function (l: List, k: any, v: any): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to set value on
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>k</span> <code class='quiet'>(any)</code>
+	    is the index of the value to get
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    to set on list
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        a new list with the value at k set as v
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listupdate'>
+      list.update
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list, an index and an updater, and returns
+a new list with the value at index updated by
+the updater.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.update</div>
+  
+    <p>
+      Type:
+      function (l: List, k: any, f: Func): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    set value on
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>k</span> <code class='quiet'>(any)</code>
+	    is the key of the value to get
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to update value on map
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        copy of list value a k updated by f
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listpush'>
+      list.push
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and a value and returns a new list
+with the value at the end</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.push</div>
+  
+    <p>
+      Type:
+      function (l: List, v: any): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    push value on
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    to push
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        a list copy with the value at the end
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listpop'>
+      list.pop
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and returns a new list minus the last entity</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.pop</div>
+  
+    <p>
+      Type:
+      function (l: List): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    push value on
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        with all values same as list minus the last entity
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listindexof'>
+      list.indexOf
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and an entity and returns the index
+of the entity in the list. if the entity does not
+exist in the list then the return is -1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.indexOf</div>
+  
+    <p>
+      Type:
+      function (l: List, i: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to indexOf
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>i</span> <code class='quiet'>(any)</code>
+	    to find index of
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        the index of the entity or -1
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listfilter'>
+      list.filter
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and a predicate and returns a new list consisting
+of the elements which pass the predicate.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.filter</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to filter
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        of elements that pass the predicate
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listfind'>
+      list.find
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and a predicate and returns the first item
+in the list to pass the predicate. if no item passes
+the predicate the return is null.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.find</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): (any | null)
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to find item in
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>(any | null)</code>:
+        the first item to pass the predicate or null
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listfindindex'>
+      list.findIndex
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and a predicate and returns the index of
+first item in the list to pass the predicate.
+if no item passes the predicate the return is -1.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.findIndex</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to find index in
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        the first item to pass the predicate or -1
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listconcat'>
+      list.concat
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes two immutable lists and returns a new combined
+list. list two is concatenated to the end of list one.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.concat</div>
+  
+    <p>
+      Type:
+      function (l1: List, l2: List): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l1</span> <code class='quiet'>(List)</code>
+	    to concat
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l2</span> <code class='quiet'>(any)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        a new list of combined l1 &#x26;&#x26; l2.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listevery'>
+      list.every
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>tests all entities against the predicate, until
+one returns false. if one returns false list.every
+returns false, else true.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.every</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to check if every
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        if predicate returns true for all entities
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listsome'>
+      list.some
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>tests all entities against the predicate until
+one returns true. if one returns true list.some
+returns true else returns false.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.some</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to check if some
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        where the predicate passes
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listhas'>
+      list.has
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>is a predicate for whether an entity exists in a list</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.has</div>
+  
+    <p>
+      Type:
+      function (l: List, v: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to search in
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>v</span> <code class='quiet'>(any)</code>
+	    to be predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>bool</code>:
+        whether an entity exists in the list
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listpartition'>
+      list.partition
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a predicate and uses it to partition the list into a
+list pair. for each entity if the predicate returns true
+the entity will be in the first list, else the second.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.partition</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): [List, List]
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to partition
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(Func)</code>
+	    predicate
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>[List, List]</code>:
+        pair of lists, left true, right false.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listmap'>
+      list.map
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and a function and applies the function
+to each entity in the list returning a list
+of the updated entities.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.map</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to map
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    to be mapping function
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        of the updated entities
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listfold'>
+      list.fold
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and an accumulator and an initial value.
+it applies the accumulator for each value in the list
+allong with the current value from the accumulator
+starting with the initial value</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.fold</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func, i: any): any
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to fold
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    accumulator
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>i</span> <code class='quiet'>(any)</code>
+	    initial accum value
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        the final value from the accumulator
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> accumulator = <span class="hljs-function">(<span class="hljs-params">acc, n</span>) =&gt;</span> acc + n
+  <span class="hljs-keyword">const</span> initialVal  = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">const</span> aList       = list.of([<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>])
+
+  list.fold(aList, accumulator, initialVal) <span class="hljs-comment">// returns 3</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='listsort'>
+      list.sort
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>takes a list and a comparator and returns
+a new list sorted by the comparator.</p>
+
+
+  <div class='pre p1 fill-light mt0'>list.sort</div>
+  
+    <p>
+      Type:
+      function (l: List, f: Func): List
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 0.0.1</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>l</span> <code class='quiet'>(List)</code>
+	    to sort
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>f</span> <code class='quiet'>(any)</code>
+	    comparator
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>List</code>:
+        sorted by the comparator
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
