@@ -6,7 +6,8 @@
 # project build targets
 umd
 es
-node_modul
+node_modules
+docs
 
 
 # secret files
