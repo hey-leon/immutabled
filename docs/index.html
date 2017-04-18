@@ -1,0 +1,69 @@
+<html>
+  <head></head>
+  <body>
+    <!-- readme -->
+<h1>Immutabled</h1>
+
+<p><a href="https://codecov.io/gh/leonp1991/immut"><img alt="codecov" src="https://codecov.io/gh/leonp1991/immut/branch/master/graph/badge.svg"/></a></p>
+
+<h2>concept</h2>
+
+<p>Immutabled is a low cost (size) immutable data structure library. Performance is saved through using structural sharing of copies, and developer sanity is kept through referential transparency.</p>
+
+<h2>comparison to immutable-js</h2>
+
+<p>In comparison this library curbs the OO api for a more traditional functional api, including support for partial application possible
+with all helpers, i.e.</p>
+
+<p><code></code>`javascript
+import { map, _ } from &#39;immutabled&#39;</p>
+
+<p>/**
+ <em> takes a user returns a user with loggedIn === true
+ </em>
+ <em> userLoggedIn: user =&gt; user
+ </em>/
+const userLogIn = map.set(_, &quot;loggedIn&quot;, true)
+<code></code>`</p>
+
+<h2>how to install</h2>
+
+<p><code>sh
+yarn add -S immutabled
+</code></p>
+
+<h2>how to import</h2>
+
+<p>The recommended import is the es version if you are using webpack 2:</p>
+
+<p><code>javascript
+import { map, _ } from &#39;immutabled/es&#39;
+</code></p>
+
+<p>For for legacy imports:
+<code></code>`javascript
+import { map, _ } from &#39;immutabled&#39;</p>
+
+<p>// or</p>
+
+<p>const { map, _ } = require(&#39;immutabled&#39;)
+<code></code>`</p>
+
+<h2>configure webpack to tree shake node_modules/**/es/*</h2>
+
+<p>to tree shake node_modules it is important that we import the native modules versions, but
+also, make sure that they are transpiled by webpack. to do this we need to configure our webpack
+rule for js slightly different slightly different.</p>
+
+<p><code>javascript
+const jsRule = {
+  test: /\.jsx?$/,
+  exclude: /node_modules\/(?!.*?es)/, // exclude node modules unless inside a &#39;es&#39; sub directory
+  use: &#39;babel-loader&#39;,
+}
+</code></p>
+
+<p>this will allow traditional node_modules to skip transpilation, but modules inside an &#39;es&#39;
+sub directory to transpiled.</p>
+  </body>
+</html>

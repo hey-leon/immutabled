@@ -3,20 +3,19 @@
 .idea
 
 
-# project build targets
+# build targets and deps
 umd
 es
 node_modules
-docs
 
 
-# secret files
+# secrets
 **/*.keys
 
 
-# log files
+# logs
 npm-debug.log
 
 
-# os files
+# system files
 .DS_Store
