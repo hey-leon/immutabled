@@ -6,9 +6,10 @@
     "build": "./tools/build/script.sh",
     "test": "./tools/test/watch.sh",
     "test:once": "./tools/test/once.sh",
-    "coverage": "./tools/coverage/script.sh",
-    "docs:build": "./tools/docs/script.sh",
-    "docs:test": "open ./docs/test/index.html"
+    "docs": "./tools/docs/open.sh",
+    "docs:serve": "./tools/docs/serve.sh",
+    "docs:api": "./tools/docs/api.sh",
+    "docs:cov": "./tools/docs/cov.sh"
   },
   "repository": {
     "type": "git",
@@ -52,10 +53,12 @@
     "babel-preset-env": "latest",
     "babel-register": "latest",
     "codecov": "latest",
+    "documentation": "git+https://github.com/documentationjs/documentation.git",
     "eslint": "latest",
     "eslint-loader": "latest",
     "eslint-plugin-flowtype": "latest",
     "flow-bin": "latest",
+    "http-server": "^0.9.0",
     "markdown": "^0.5.0",
     "nyc": "latest",
     "sinon": "latest",
