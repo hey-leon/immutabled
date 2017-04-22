@@ -1,69 +1,131 @@
 <html>
-  <head></head>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px|Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
   <body>
-    <!-- readme -->
-<h1>Immutabled</h1>
 
-<p><a href="https://codecov.io/gh/leonp1991/immut"><img alt="codecov" src="https://codecov.io/gh/leonp1991/immut/branch/master/graph/badge.svg"/></a></p>
 
-<h2>concept</h2>
+    <!-- COVER -->
+    <div class="Cover">
+      <div class="Cover__menu">
+        <div class="Menu__left">
+          <div class="Badge">
+            <a href="https://badge.fury.io/js/immutabled">
+              <img
+                src="https://badge.fury.io/js/immutabled.svg"
+                alt="npm version"
+              >
+            </a>
+          </div>
+          <div class="Badge">
+            <a href="https://codecov.io/gh/leonp1991/immutabled">
+              <img
+                src="https://codecov.io/gh/leonp1991/immutabled/branch/master/graph/badge.svg"
+                alt="Codecov"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="Menu__right">
+          <a class="Menu__link" href="https://leonp1991.github.io/immutabled/docs">
+            Documantation
+          </a>
+          <a class="Menu__link" href="https://github.com/leonp1991/immutabled">
+            Github
+          </a>
+        </div>
+      </div>
 
-<p>Immutabled is a low cost (size) immutable data structure library. Performance is saved through using structural sharing of copies, and developer sanity is kept through referential transparency.</p>
+      <h1 class="Cover__title">
+        Immutabled
+      </h1>
+    </div>
 
-<h2>comparison to immutable-js</h2>
 
-<p>In comparison this library curbs the OO api for a more traditional functional api, including support for partial application possible
-with all helpers, i.e.</p>
+    <!-- MENU -->
+    <div class="Fixed__menu">
+      <div class="Menu__left">
+        <h2 class="Menu__title">
+          Immutabled
+        </h2>
+      </div>
+      <div class="Menu__right">
+        <a class="Menu__link" href="https://leonp1991.github.io/immutabled/docs">
+          Documantation
+        </a>
+        <a class="Menu__link" href="https://github.com/leonp1991/immutabled">
+          Github
+        </a>
+      </div>
+    </div>
 
-<p><code></code>`javascript
-import { map, _ } from &#39;immutabled&#39;</p>
 
-<p>/**
- <em> takes a user returns a user with loggedIn === true
- </em>
- <em> userLoggedIn: user =&gt; user
- </em>/
-const userLogIn = map.set(_, &quot;loggedIn&quot;, true)
-<code></code>`</p>
+    <!-- README -->
+    <div class="Readme">
+      <section>
+        <h2>concept</h2>
 
-<h2>how to install</h2>
+        <p>
+          Immutabled is a low cost (8kb in size) immutable data structure library. Performance is saved
+          through using structural sharing of copies, and developer sanity is kept through
+          referential transparency.
+        </p>
+      </section>
 
-<p><code>sh
-yarn add -S immutabled
-</code></p>
+      <section>
+        <h2>comparison to immutable-js</h2>
 
-<h2>how to import</h2>
+        <p>
+          while immutable.js opts for an object oriented api, immutabled opts in to more functional api
+          featuring partial application and seperation of logic and data.
+        </p>
 
-<p>The recommended import is the es version if you are using webpack 2:</p>
+        <script src="https://gist.github.com/leonp1991/ba8a7db41ad2ad13ba4b77380f8ae3ed.js"></script>
+      </section>
 
-<p><code>javascript
-import { map, _ } from &#39;immutabled/es&#39;
-</code></p>
+      <section>
+        <h2>how to install</h2>
 
-<p>For for legacy imports:
-<code></code>`javascript
-import { map, _ } from &#39;immutabled&#39;</p>
+        <p><code>yarn add -S immutabled</code></p>
+      </section>
 
-<p>// or</p>
+      <section>
+        <h2>how to import</h2>
 
-<p>const { map, _ } = require(&#39;immutabled&#39;)
-<code></code>`</p>
+        <p>The recommended import is the es version if you are using webpack 2:</p>
 
-<h2>configure webpack to tree shake node_modules/**/es/*</h2>
+        <script src="https://gist.github.com/leonp1991/2df7bc9927f86056642b558b8f792729.js"></script>
+      </section>
 
-<p>to tree shake node_modules it is important that we import the native modules versions, but
-also, make sure that they are transpiled by webpack. to do this we need to configure our webpack
-rule for js slightly different slightly different.</p>
+      <section>
+        <h2>configure webpack to tree shake node_modules/**/es/*</h2>
 
-<p><code>javascript
-const jsRule = {
-  test: /\.jsx?$/,
-  exclude: /node_modules\/(?!.*?es)/, // exclude node modules unless inside a &#39;es&#39; sub directory
-  use: &#39;babel-loader&#39;,
-}
-</code></p>
+        <p>
+          to tree shake node_modules it is important that we import the native modules versions, but
+          also, make sure that they are transpiled by webpack. to do this we need to configure our
+          webpack rule for js slightly different slightly different.
+        </p>
 
-<p>this will allow traditional node_modules to skip transpilation, but modules inside an &#39;es&#39;
-sub directory to transpiled.</p>
+        <script
+          src="https://gist.github.com/leonp1991/fc168ede8c4ef31cb676b8be1888cf5d.js"
+        ></script>
+
+        <p>
+          this will allow traditional node_modules to skip transpilation, but modules inside an
+          &#39;es&#39; sub directory to transpiled.
+        </p>
+      </section>
+    </div>
+
+
+    <!-- FOOTER -->
+    <!--<div class="Footer">
+    </div>-->
+
+
   </body>
 </html>

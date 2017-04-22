@@ -1,0 +1,123 @@
+html {
+  font-size: 12pt;
+}
+
+body {
+  background-color: #fff;
+  color:            rgba(66, 66, 66, 0.87);
+  font-family:      'Slabo 27px';
+  font-size:        1.25rem;
+  margin:           0;
+  overflow-x:       hidden;
+}
+
+.Badge {
+  opacity: 0.87;
+  padding: 1rem;
+}
+.Badge:hover { opacity: 1; }
+
+.Cover {
+  background-color: #222;
+  height:           66vh;
+  position:         relative;
+  width:            100%;
+  z-index:          200;
+}
+
+.Cover__menu {
+  align-items:     center;
+  display:         flex;
+  height:          4rem;
+  justify-content: space-between;
+  padding:         0 1rem;
+  position:        absolute;
+  top:             0;
+  width:           calc(100% - 2rem);
+}
+
+.Cover__title {
+  color:           #ffeb3b;
+  font-family:     'Slabo 27px';
+  font-size:       6rem;
+  line-height:     6rem;
+  margin:          0;
+  opacity:         0.87;
+  position:        absolute;
+  text-align:      center;
+  text-decoration: underline;
+  top:             calc(50% - 3rem);
+  width:           100%;
+}
+
+.Fixed__menu {
+  align-items:      center;
+  background-color: #333;
+  box-shadow:       0 0 0.25rem 0.0625rem rgba(166, 166, 166, 0.27);
+  display:          flex;
+  height:           4rem;
+  justify-content:  space-between;
+  padding:          0 1rem;
+  position:         fixed;
+  top:              0;
+  width:            calc(100% - 2rem);
+  z-index:          100;
+}
+
+.Menu__left,
+.Menu__right {
+  display: flex;
+  align-content: center;
+}
+
+.Menu__title {
+  color:           #FFEE58;
+  font-family:     'Slabo 27px';
+  font-size:       1.8rem;
+  margin:          0 0.5rem;
+  opacity:         0.87;
+  text-decoration: underline;
+}
+
+.Menu__link {
+  color:           #fff;
+  opacity:         0.57;
+  padding:         0 0.5rem;
+  text-decoration: none;
+}
+.Menu__link:hover { opacity: 0.87; }
+
+.Readme {
+  margin:      0 auto;
+  max-width:   50rem;
+  padding-top: 8rem;
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+h1,
+h2,
+h3 {
+  color:       #0d47a1;
+  font-family: 'Open Sans';
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: 2rem;
+  margin-top:    1rem;
+}
+
+code {
+  white-space: pre-wrap;
+}
+
+/*.Footer {
+  background-color: #222;
+  height:           4rem;
+}*/
