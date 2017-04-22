@@ -27,9 +27,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leonp1991/redux_em/issues"
+    "url": "https://github.com/leonp1991/immutabled/issues"
   },
-  "homepage": "https://github.com/leonp1991/immut#readme",
+  "homepage": "https://leonp1991.github.io/immutabled/",
   "ava": {
     "files": [
       "tests/**/*.spec.js"
@@ -59,7 +59,6 @@
     "eslint-plugin-flowtype": "latest",
     "flow-bin": "latest",
     "http-server": "^0.9.0",
-    "markdown": "^0.5.0",
     "nyc": "latest",
     "sinon": "latest",
     "webpack": "latest"
