@@ -18,8 +18,12 @@ body {
 .Badge:hover { opacity: 1; }
 
 .Cover {
+  align-items:      center;
   background-color: #222;
+  display:          flex;
+  flex-direction:   column;
   height:           66vh;
+  justify-content:  center;
   position:         relative;
   width:            100%;
   z-index:          200;
@@ -36,18 +40,19 @@ body {
   width:           calc(100% - 2rem);
 }
 
+.Cover__logo {
+  height: 12rem;
+  width:  12rem;
+}
+
 .Cover__title {
-  color:           #ffeb3b;
+  color:           #00e676;
   font-family:     'Slabo 27px';
   font-size:       6rem;
   line-height:     6rem;
   margin:          0;
   opacity:         0.87;
-  position:        absolute;
-  text-align:      center;
   text-decoration: underline;
-  top:             calc(50% - 3rem);
-  width:           100%;
 }
 
 .Fixed__menu {
@@ -71,7 +76,7 @@ body {
 }
 
 .Menu__title {
-  color:           #FFEE58;
+  color:           #00e676;
   font-family:     'Slabo 27px';
   font-size:       1.8rem;
   margin:          0 0.5rem;
@@ -90,7 +95,7 @@ body {
 .Readme {
   margin:      0 auto;
   max-width:   50rem;
-  padding-top: 8rem;
+  padding-top: 6rem;
 }
 
 section {
@@ -100,7 +105,7 @@ section {
 h1,
 h2,
 h3 {
-  color:       #0d47a1;
+  color:       #00c853;
   font-family: 'Open Sans';
 }
 
