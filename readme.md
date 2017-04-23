@@ -6,7 +6,7 @@
 ## concept
 Immutabled is a low cost (8kb in size) immutable data structure library. Performance is saved
 through using structural sharing of copies, and developer sanity is kept through
-referential transparency. check out the [documentation](https://leonp1991.github.io/immutabled)
+referential transparency. check out the [documentation](https://leonp1991.github.io/immutabled).
 
 ## comparison to immutable-js
 while immutable.js opts for an object oriented api, immutabled opts in to more functional api
