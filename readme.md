@@ -1,24 +1,41 @@
 # Immutabled
+[![codecov](https://codecov.io/gh/leonp1991/immutabled/branch/master/graph/badge.svg)](https://codecov.io/gh/leonp1991/immutabled)
 
-[![codecov](https://codecov.io/gh/leonp1991/immut/branch/master/graph/badge.svg)](https://codecov.io/gh/leonp1991/immut)
 
 
 ## concept
-Immutabled is a low cost (size) immutable data structure library. Performance is saved through using structural sharing of copies, and developer sanity is kept through referential transparency.
-
+Immutabled is a low cost (8kb in size) immutable data structure library. Performance is saved
+through using structural sharing of copies, and developer sanity is kept through
+referential transparency. check out the [documentation](https://leonp1991.github.io/immutabled)
 ## comparison to immutable-js
-In comparison this library curbs the OO api for a more traditional functional api, including support for partial application possible
-with all helpers, i.e.
+while immutable.js opts for an object oriented api, immutabled opts in to more functional api
+featuring partial application and seperation of logic and data.
 
 ```javascript
-import { map, _ } from 'immutabled'
+import { map, _ } from 'immutabled';
 
 /**
  * takes a user returns a user with loggedIn === true
- *
  * userLoggedIn: user => user
+ *
+ * @example
+ *   userLogin(user)
+ *
  */
-const userLogIn = map.set(_, "loggedIn", true)
+const userLogIn = map.set(_, 'loggedIn', true)
+
+
+import { Map } from 'immutable'
+
+/**
+ * takes a user returns a user with loggedIn === true
+ * userLoggedIn: user => user
+ *
+ * @example
+ *   userLogin(user)
+ *
+ */
+const userLogin = user => user.set('loggedIn', true)
 ```
 
 ## how to install
