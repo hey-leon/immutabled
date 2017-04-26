@@ -1,2 +1,3 @@
-build/**/*.js
 docs/**/*.js
+es/**/*.js
+umd/**/*.js
