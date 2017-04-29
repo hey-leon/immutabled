@@ -11,9 +11,9 @@ import set       from './set'
 import size      from '../immut/size'
 import symbols   from '../consts/symbols'
 import update    from './update'
+import updateIn  from '../immut/updateIn'
 
-
-export const type = symbols.map
+const type = symbols.map
 
 export {
   apply,
@@ -26,7 +26,9 @@ export {
   pluck,
   set,
   size,
+  type,
   update,
+  updateIn,
 }
 
 
@@ -43,4 +45,5 @@ export default {
   size,
   type,
   update,
+  updateIn,
 }

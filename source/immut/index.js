@@ -1,13 +1,26 @@
-import parse from './from'
-import apply from './apply'
-import size  from './size'
-import data  from './data'
-import get   from './get'
+import apply    from './apply'
+import parse    from './from'
+import updateIn from './updateIn'
+import size     from './size'
+import data     from './data'
+import get      from './get'
+
+const from = parse
+
+export {
+  apply,
+  data,
+  from,
+  get,
+  size,
+  updateIn,
+}
 
 export default {
-  from: parse,
   apply,
-  size,
   data,
+  from,
   get,
+  size,
+  updateIn,
 }

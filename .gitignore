@@ -4,6 +4,7 @@
 
 
 # build targets and deps
+docs/test
 umd
 es
 node_modules

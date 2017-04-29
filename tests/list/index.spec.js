@@ -19,9 +19,16 @@ test('exports: apply is included', t => {
   t.true(list.apply instanceof Function)
 })
 
+
+test('exports: updateIn is included', t => {
+  t.true(list.updateIn instanceof Function)
+})
+
+
 test('exports: size is included', t => {
   t.true(list.size instanceof Function)
 })
+
 
 test('exports: del is included', t => {
   t.true(list.del instanceof Function)

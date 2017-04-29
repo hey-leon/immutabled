@@ -1,10 +1,6 @@
 // @flow
-import type { Immut, Func } from '../consts/types'
-import { runtimeError }     from '../utils/helpers'
-import { isList, isMap }    from '../utils/is'
-import { curry }            from '../utils/curry'
-import list                 from '../list'
-import map                  from '../map'
+import type { Immut } from '../consts/types'
+import updateIn from './updateIn'
 
 
 
@@ -19,20 +15,18 @@ import map                  from '../map'
  * @param  {Func}  f to apply
  * @return {Immut} the copy of the immutable with the updated value
  * @since 0.0.1
+ * @deprecated since 0.0.8, to be removed in 0.0.10
  */
-export const apply: (i: Immut, ks: any[], f: Func) => Immut | void =
-  (i, [ k, ...ks ], f) =>
-    isList(i)
-      ? ks.length > 0
-        ? list.set(i, k, apply(i.__data__[k], ks, f))
-        : list.update(i, k, f)
-  : isMap(i)
-      ? ks.length > 0
-        ? map.set(i, k, apply(i.__data__[k], ks, f))
-        : map.update(i, k, f)
-  : runtimeError(TypeError, 'Path does not match shape')
+export const apply: (args: any[]) => Immut | void =
+  (...args) => {
+    console.warn(
+      'apply is deprecated! please use updateIn. apply will be removed in 0.0.10.'
+    )
+
+    return updateIn(...args)
+  }
 
 
 
 
-export default curry(apply)
+export default apply

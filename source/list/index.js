@@ -22,8 +22,9 @@ import some      from './some'
 import sort      from './sort'
 import symbols   from '../consts/symbols'
 import update    from './update'
+import updateIn  from '../immut/updateIn'
 
-export const type = symbols.list
+const type = symbols.list
 
 export {
   apply,
@@ -47,7 +48,9 @@ export {
   size,
   some,
   sort,
+  type,
   update,
+  updateIn,
 }
 
 
@@ -75,4 +78,5 @@ export default {
   sort,
   type,
   update,
+  updateIn,
 }
