@@ -1,6 +1,6 @@
 // @flow
-import type { Immut } from '../consts/types'
-import updateIn from './updateIn'
+import type { Immut, Func } from '../consts/types'
+import { updateIn } from './updateIn'
 
 
 
@@ -17,7 +17,7 @@ import updateIn from './updateIn'
  * @since 0.0.1
  * @deprecated since 0.0.8, to be removed in 0.0.10
  */
-export const apply: (args: any[]) => Immut | void =
+export const apply: (Immut, any[], Func) => Immut | void =
   (...args) => {
     console.warn(
       'apply is deprecated! please use updateIn. apply will be removed in 0.0.10.'
