@@ -1,9 +1,10 @@
 import apply    from './apply'
-import parse    from './from'
-import updateIn from './updateIn'
-import size     from './size'
 import data     from './data'
 import get      from './get'
+import getIn    from './getIn'
+import parse    from './from'
+import size     from './size'
+import updateIn from './updateIn'
 
 const from = parse
 
@@ -12,6 +13,7 @@ export {
   data,
   from,
   get,
+  getIn,
   size,
   updateIn,
 }
@@ -21,6 +23,7 @@ export default {
   data,
   from,
   get,
+  getIn,
   size,
   updateIn,
 }
