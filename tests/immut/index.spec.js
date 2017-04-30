@@ -25,3 +25,7 @@ test('exports: updateIn is included', t => {
 test('exports: get is included', t => {
   t.true(immut.get instanceof Function)
 })
+
+test('exports: getIn is included', t => {
+  t.true(immut.getIn instanceof Function)
+})

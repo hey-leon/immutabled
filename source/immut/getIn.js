@@ -17,7 +17,7 @@ import { runtimeError } from '../utils/helpers'
  */
 export const getIn: (i: Immut, ks: any[]) => any | void =
   (i, [ k, ...ks ]) => i
-    ? ks.length > 0
+    ? k !== undefined
       ? getIn(get(i, k), ks)
       : i
     : runtimeError(TypeError, 'Path does not match shape')
