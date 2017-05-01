@@ -25,6 +25,12 @@ export const mapOf1 = () => ({
   __size__: 1,
 })
 
+export const mapOf1n = () => ({
+  __type__: '__immut_map__',
+  __data__: { [1]: currString1 },
+  __size__: 1,
+})
+
 export const mapOf2 = () => ({
   __type__: '__immut_map__',
   __data__: {
