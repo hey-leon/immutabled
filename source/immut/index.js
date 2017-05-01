@@ -3,6 +3,7 @@ import data     from './data'
 import get      from './get'
 import getIn    from './getIn'
 import parse    from './from'
+import setIn    from './setIn'
 import size     from './size'
 import updateIn from './updateIn'
 
@@ -15,6 +16,7 @@ export {
   get,
   getIn,
   size,
+  setIn,
   updateIn,
 }
 
@@ -25,5 +27,6 @@ export default {
   get,
   getIn,
   size,
+  setIn,
   updateIn,
 }

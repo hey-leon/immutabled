@@ -3,7 +3,7 @@ import test from 'ava'
 import Symbols from '../../source/consts/symbols'
 import of      from '../../source/map/of'
 
-import { testOf } from '../helpers'
+import { testOf } from '../assert'
 
 
 

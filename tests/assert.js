@@ -1,4 +1,6 @@
 
+//--------------------------------- x#of checks ---------------------------------//
+
 /**
  * @param {Object} t ava assertions
  * @param {Object|List} i input for #of
@@ -9,9 +11,11 @@ export const testOf =
   (t, i, e, of) => {
     const output = of(i)
 
-    const data = !i          ? {}
-              :  i.__data__ ? i.__data__
-              :  i
+    const data = i
+      ? i.__data__
+        ? i.__data__
+        : i
+      : {}
 
     t.is(output.__type__, e.__type__)  // test the __type__
     t.is(output.__size__, e.__size__)  // test the __size__
@@ -22,6 +26,18 @@ export const testOf =
       .forEach(([k, v]) => { t.is(v, output.__data__[k]) })
   }
 
+
+//--------------------------------- size checks --------------------------------//
+
+/**
+ * @param {Immut}  i1 previous immut
+ * @param {Immut}  i2 next immut
+ * @param {number} D  delta
+ */
+export const testSize =
+  (i1, i2, D) => i1.__size__ + D === i2.__size__
+
+//--------------------------------- ref checks ---------------------------------//
 
 /**
  * @param {Immut} i1 previous immut
@@ -42,8 +58,9 @@ export const testDataRefs =
   (i1, i2, [ k, ...ks ]) => Object.keys(i2).every(
     _k => _k === k
 
-      ? ks ? notEq(i1, i2, k) && testRefs(i1.__data__[k], i2.__data__[k], ks)
-           : notEq(i1, i2, k)
+      ? ks
+        ? notEq(i1, i2, k) && testRefs(i1.__data__[k], i2.__data__[k], ks)
+        : notEq(i1, i2, k)
 
       : isEq(i1, i2, _k)
   )

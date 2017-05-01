@@ -6,7 +6,7 @@ import {
   _,
 } from '../../source/utils/curry.js'
 
-import { testRefs } from '../helpers'
+import * as A from '../assert'
 
 
 test('list#pop: should be curryable', t => {
@@ -25,7 +25,7 @@ test('list#pop: should pop new value', t => {
 
   const l2 = pop(l1)
 
-  t.true(testRefs(l1, l2, [k]))
+  t.true(A.testRefs(l1, l2, [k]))
   t.is(l1.__data__[k], v)
   t.is(l2.__data__[k], undefined)
   t.is(l2.__size__, l1.__size__ - 1)

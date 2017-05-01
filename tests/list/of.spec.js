@@ -3,7 +3,7 @@ import test from 'ava'
 import Symbols from '../../source/consts/symbols'
 import of      from '../../source/list/of'
 
-import { testOf } from '../helpers'
+import * as A from '../assert'
 
 
 
@@ -13,7 +13,7 @@ const e0 = {
   __size__: 0,
 }
 
-test('list#of: should return list of undefined', testOf, undefined, e0, of)
+test('list#of: should return list of undefined', A.testOf, undefined, e0, of)
 
 
 const i1 = []
@@ -23,7 +23,7 @@ const e1 = {
   __size__: 0,
 }
 
-test('list#of: should return list of {}', testOf, i1, e1, of)
+test('list#of: should return list of {}', A.testOf, i1, e1, of)
 
 
 
@@ -34,7 +34,7 @@ const e2 = {
   __size__: 1,
 }
 
-test('list#of: should return list of {} with props', testOf, i2, e2, of)
+test('list#of: should return list of {} with props', A.testOf, i2, e2, of)
 
 
 
@@ -45,7 +45,7 @@ const e3 = {
   __size__: 1,
 }
 
-test('list#of: should return list of {} with nested', testOf, i3, e3, of)
+test('list#of: should return list of {} with nested', A.testOf, i3, e3, of)
 
 
 
@@ -56,7 +56,7 @@ const e4 = {
   __size__: 2,
 }
 
-test('list#of: should return list of complex shape', testOf, i4, e4, of)
+test('list#of: should return list of complex shape', A.testOf, i4, e4, of)
 
 
 
@@ -67,4 +67,4 @@ const e5 = {
   __size__: 1,
 }
 
-test('list#of: should return list of list', testOf, i5, e5, of)
+test('list#of: should return list of list', A.testOf, i5, e5, of)

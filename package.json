@@ -57,7 +57,7 @@
     "eslint": "latest",
     "eslint-loader": "latest",
     "eslint-plugin-flowtype": "latest",
-    "flow-bin": "latest",
+    "flow-bin": "^0.45.0",
     "http-server": "^0.9.0",
     "nyc": "latest",
     "sinon": "latest",

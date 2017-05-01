@@ -6,7 +6,7 @@ import {
   _,
 } from '../../source/utils/curry.js'
 
-import { testRefs } from '../helpers'
+import * as A from '../assert'
 
 
 test('map#del: should be curryable', t => {
@@ -23,7 +23,7 @@ test('map#del: should del new value', t => {
   }
 
   const m2 = del(m1, k)
-  t.true(testRefs(m1, m2, [k]))
+  t.true(A.testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], 2)
   t.is(m2.__data__[k], undefined)
   t.is(m2.__size__, m1.__size__ - 1)

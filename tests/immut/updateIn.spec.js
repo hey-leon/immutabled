@@ -7,7 +7,7 @@ import {
   _,
 } from '../../source/utils/curry.js'
 
-import { testRefs } from '../helpers'
+import { testRefs } from '../assert'
 
 test('immut#updateIn: should be curryable', t => {
   t.is(updateIn(_), updateIn)

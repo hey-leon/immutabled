@@ -6,7 +6,7 @@ import {
   _,
 } from '../../source/utils/curry.js'
 
-import { testRefs } from '../helpers'
+import * as A from '../assert'
 
 
 test('list#del: should be curryable', t => {
@@ -23,7 +23,7 @@ test('list#del: should del new value', t => {
 
   const l2 = del(l1, k)
 
-  t.true(testRefs(l1, l2, [k]))
+  t.true(A.testRefs(l1, l2, [k]))
   t.is(l1.__data__[k], 'c')
   t.is(l2.__data__[k], 'd')
   t.is(l2.__size__, l1.__size__ - 1)

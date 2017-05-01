@@ -6,7 +6,7 @@ import {
   _,
 } from '../../source/utils/curry'
 
-import { testRefs } from '../helpers'
+import * as A from '../assert'
 
 test('map#set: should be curryable', t => {
   t.is(set(_), set)
@@ -24,7 +24,7 @@ test('map#set: should set new value', t => {
 
   const m2 = set(m1, k, v)
 
-  t.true(testRefs(m1, m2, [k]))
+  t.true(A.testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], undefined)
   t.is(m2.__data__[k], v)
   t.is(m2.__size__, m1.__size__ + 1)
@@ -43,7 +43,7 @@ test('map#set: should overwrite value', t => {
 
   const m2 = set(m1, k, v2)
 
-  t.true(testRefs(m1, m2, [k]))
+  t.true(A.testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], v1)
   t.is(m2.__data__[k], v2)
   t.is(m2.__size__, m1.__size__)
