@@ -1,48 +1,36 @@
 import test from 'ava'
 
+import * as A from '../assert'
+import * as F from '../fixtures'
+
 import update from '../../source/map/update'
 
 import {
   _,
 } from '../../source/utils/curry'
 
-import * as A from '../assert'
-
-test('map#update: should be curryable', t => {
+test('map.update: should be curryable', t => {
   t.is(update(_), update)
 })
 
+test('map.update: should update (already set) value', t => {
+  const k = 'a'
+  const m1 = F.mapOfa()
 
-test('map#update: should update value', t => {
-  const k = 'prop'
-  const v = 1
-
-  const m1 = {
-    __data__: { [k]: v },
-    __size__: 1
-  }
-
-  const m2 = update(m1, k, (v=0) => v + 1)
-
+  const m2 = update(m1, k, f => f + F.nextString1)
   t.true(A.testRefs(m1, m2, [k]))
-  t.is(m1.__data__[k], 1)
-  t.is(m2.__data__[k], 2)
-  t.is(m2.__size__, m1.__size__)
+  t.is(m1.__data__[k], F.currString1)
+  t.is(m2.__data__[k], F.currString1 + F.nextString1)
+  t.true(A.testSize(m1, m2, 0))
 })
 
+test('map.update: should update (unset) value', t => {
+  const k = 'a'
+  const m1 = F.map()
 
-test('map#update: should update when no value already', t => {
-  const k = 'prop'
-
-  const m1 = {
-    __data__: {},
-    __size__: 0
-  }
-
-  const m2 = update(m1, k, (v=0) => v + 1)
-
+  const m2 = update(m1, k, f => f + F.nextString1)
   t.true(A.testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], undefined)
-  t.is(m2.__data__[k], 1)
-  t.is(m2.__size__, m1.__size__ + 1)
+  t.is(m2.__data__[k], undefined + F.nextString1)
+  t.true(A.testSize(m1, m2, 1))
 })

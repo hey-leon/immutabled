@@ -39,6 +39,14 @@ test('exports: get is included', t => {
   t.true(map.get instanceof Function)
 })
 
+test('exports: getIn is included', t => {
+  t.true(map.getIn instanceof Function)
+})
+
+test('exports: setIn is included', t => {
+  t.true(map.setIn instanceof Function)
+})
+
 
 test('exports: set is included', t => {
   t.true(map.set instanceof Function)

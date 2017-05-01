@@ -51,6 +51,12 @@ export const mapOfbc = () => ({
   __size__: 2,
 })
 
+export const mapOf = data => ({
+  __type__: '__immut_map__',
+  __data__: data,
+  __size__: Object.keys(data).length,
+})
+
 export const mapOfMaps = () => ({
     __type__: '__immut_map__',
   __data__: {

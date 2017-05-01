@@ -1,50 +1,35 @@
 import test from 'ava'
 
-import set from '../../source/map/set'
+import * as A from '../assert'
+import * as F from '../fixtures'
 
+import set from '../../source/map/set'
 import {
   _,
 } from '../../source/utils/curry'
 
-import * as A from '../assert'
-
-test('map#set: should be curryable', t => {
+test('map.set: should be curryable', t => {
   t.is(set(_), set)
 })
 
+test('map.set: should set new value', t => {
+  const k = 'a'
+  const m1 = F.map()
 
-test('map#set: should set new value', t => {
-  const k = 'propOne'
-  const v = 'value'
-
-  const m1 = {
-    __data__: {},
-    __size__: 0,
-  }
-
-  const m2 = set(m1, k, v)
-
+  const m2 = set(m1, k, F.currString1)
   t.true(A.testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], undefined)
-  t.is(m2.__data__[k], v)
-  t.is(m2.__size__, m1.__size__ + 1)
+  t.is(m2.__data__[k], F.currString1)
+  t.true(A.testSize(m1, m2, 1))
 })
 
+test('map.set: should overwrite value', t => {
+  const k = 'a'
+  const m1 = F.mapOfa()
 
-test('map#set: should overwrite value', t => {
-  const k  = 'propOne'
-  const v1 = 'value1'
-  const v2 = 'value2'
-
-  const m1 = {
-    __data__: { [k]: v1 },
-    __size__: 0,
-  }
-
-  const m2 = set(m1, k, v2)
-
+  const m2 = set(m1, k, F.nextString1)
   t.true(A.testRefs(m1, m2, [k]))
-  t.is(m1.__data__[k], v1)
-  t.is(m2.__data__[k], v2)
-  t.is(m2.__size__, m1.__size__)
+  t.is(m1.__data__[k], F.currString1)
+  t.is(m2.__data__[k], F.nextString1)
+  t.true(A.testSize(m1, m2, 0))
 })
