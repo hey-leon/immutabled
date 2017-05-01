@@ -9,7 +9,8 @@
     "docs": "./tools/docs/open.sh",
     "docs:serve": "./tools/docs/serve.sh",
     "docs:api": "./tools/docs/api.sh",
-    "docs:cov": "./tools/docs/cov.sh"
+    "docs:cov": "./tools/docs/cov.sh",
+    "cov:report": "./tools/cov/report.sh"
   },
   "repository": {
     "type": "git",
