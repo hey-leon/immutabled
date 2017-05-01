@@ -1,116 +1,151 @@
 import test from 'ava'
 
-import updateIn from '../../source/immut/updateIn'
-import symbols  from '../../source/consts/symbols'
+import * as A from '../assert'
+import * as F from '../fixtures'
 
+import updateIn from '../../source/immut/updateIn'
 import {
   _,
 } from '../../source/utils/curry.js'
 
-import { testRefs } from '../assert'
 
-test('immut#updateIn: should be curryable', t => {
+test('immut.updateIn: should be curryable', t => {
   t.is(updateIn(_), updateIn)
 })
 
+test('immut.updateIn: should update (already set) member on map', t => {
+  const path = [ 'a' ]
+  const i1 = F.mapOf1()
 
-test('immut#updateIn: should error if data type is not an immut', t => {
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.is(i2.__data__.a, F.currString1 + F.nextString1)
+})
+
+test('immut.updateIn: should update (unset) member on map', t => {
+  const path = [ 'a' ]
+  const i1 = F.mapOf0()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 1))
+  t.is(i2.__data__.a, undefined + F.nextString1)
+})
+
+test('immut.updateIn: should update (already set) entity in list', t => {
+  const path = [ 0 ]
+  const i1 = F.listOf1()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.is(i2.__data__[0], F.currString1 + F.nextString1)
+})
+
+test('immut.updateIn: should update (unset) entity in list', t => {
+  const path = [ 0 ]
+  const i1 = F.listOf0()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 1))
+  t.is(i2.__data__[0], undefined + F.nextString1)
+})
+
+test('immut.updateIn: should update (already set) nested member on (map->map)', t => {
+  const path = [ 'b', 'a' ]
+  const i1 = F.mapOfMaps1()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__.b, i2.__data__.b, 0))
+  t.is(i2.__data__.b.__data__.a, F.currString1 + F.nextString1)
+})
+
+test('immut.updateIn: should update (unset) nested member on (map->map)', t => {
+  const path = [ 'b', 'a' ]
+  const i1 = F.mapOfMaps0()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__.b, i2.__data__.b, 1))
+  t.is(i2.__data__.b.__data__.a, undefined + F.nextString1)
+})
+
+test('immut.updateIn: should update (already set) nested entity in (list->list)', t => {
+  const path = [ 0, 0 ]
+  const i1 = F.listOfLists1()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__[0], i2.__data__[0], 0))
+  t.is(i2.__data__[0].__data__[0], F.currString1 + F.nextString1)
+})
+
+test('immut.updateIn: should update (unset) nested entity in (list->list)', t => {
+  const path = [ 0, 0 ]
+  const i1 = F.listOfLists0()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__[0], i2.__data__[0], 1))
+  t.is(i2.__data__[0].__data__[0], undefined + F.nextString1)
+})
+
+
+test('immut.updateIn: should update (already set) nested member on (map->list)', t => {
+  const path = [ 'b', 0 ]
+  const i1 = F.mapOfLists1()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__.b, i2.__data__.b, 0))
+  t.is(i2.__data__.b.__data__[0], F.currString1 + F.nextString1)
+})
+
+test('immut.updateIn: should update (unset) nested member on (map->list)', t => {
+  const path = [ 'b', 0 ]
+  const i1 = F.mapOfLists0()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__.b, i2.__data__.b, 1))
+  t.is(i2.__data__.b.__data__[0], undefined + F.nextString1)
+})
+
+test('immut.updateIn: should update (already set) nested member on (list->map)', t => {
+  const path = [ 0, 'a' ]
+  const i1 = F.listOfMaps1()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__[0], i2.__data__[0], 0))
+  t.is(i2.__data__[0].__data__.a, F.currString1 + F.nextString1)
+})
+
+test('immut.updateIn: should update (unset) nested member on (list->map)', t => {
+  const path = [ 0, 'a' ]
+  const i1 = F.listOfMaps0()
+
+  const i2 = updateIn(i1, path, f => f + F.nextString1)
+  t.true(A.testRefs(i1, i2, path))
+  t.true(A.testSize(i1, i2, 0))
+  t.true(A.testSize(i1.__data__[0], i2.__data__[0], 1))
+  t.is(i2.__data__[0].__data__.a, undefined + F.nextString1)
+})
+
+test('immut.updateIn: should error if data type is not an immut', t => {
   t.throws(() => updateIn({}, [ 'p' ], f => f), TypeError)
 })
 
-
-test('immut#updateIn: should error if immut does not contain key', t => {
-  const m = {
-    __data__: {},
-  }
-
-  t.throws(() => updateIn(m, [ 'p' ], f => f), TypeError)
-})
-
-
-test('immut#updateIn: should updateIn f to map type', t => {
-  const path = [ 'p' ]
-  const m1 = {
-    __type__: symbols.map,
-    __data__: { p: 1 },
-  }
-
-  const m2 = updateIn(m1, path, f => f + 1)
-
-  t.not(testRefs(m1, m2, path))
-  t.is(m2.__data__.p, 2)
-})
-
-
-test('immut#updateIn: should updateIn f to list type', t => {
-  const path = [ 1 ]
-  const l1 = {
-    __type__: symbols.list,
-    __data__: [ 1, 4 ],
-  }
-
-  const l2 = updateIn(l1, path, f => f + 1)
-
-  t.not(testRefs(l1, l2, path))
-  t.is(l2.__data__[1], 5)
-})
-
-
-test('immut#updateIn: should updateIn f to nested map types', t => {
-  const path = [ 'nestedMap', 'p' ]
-  const m1 = {
-    __type__: symbols.map,
-    __data__: {
-      nestedMap: {
-        __type__: symbols.map,
-        __data__: { p: 21 },
-      }
-    },
-  }
-
-  const m2 = updateIn(m1, path, f => f + 10)
-
-  t.not(testRefs(m1, m2, path))
-  t.is(m2.__data__.nestedMap.__data__.p, 31)
-})
-
-
-test('immut#updateIn: should updateIn f to nested list types', t => {
-  const path = [ 1, 3 ]
-  const l1 = {
-    __type__: symbols.list,
-    __data__: [
-      'zero',
-      {
-        __type__: symbols.list,
-        __data__: [ 0, 1, 2, 'three'],
-      },
-    ],
-  }
-
-  const l2 = updateIn(l1, path, f => f + ' pees in a pod')
-
-  t.not(testRefs(l1, l2, path))
-  t.is(l2.__data__[1].__data__[3],  'three pees in a pod')
-})
-
-
-test('immut#updateIn: should updateIn f to nested immut types', t => {
-  const path = [ 1, 'p' ]
-  const m1 = {
-    __type__: symbols.list,
-    __data__: [
-      'zero',
-      {
-        __type__: symbols.map,
-        __data__: { p: -6 },
-      },
-      'two',
-    ],
-  }
-
-  const m2 = updateIn(m1, path, f => f + 7)
-
-  t.not(testRefs(m1, m2, path))
-  t.is(m2.__data__[1].__data__.p, 1)
+test('immut.updateIn: should error if immut does not contain key', t => {
+  t.throws(() => updateIn({ __data__: {} }, [ 'p' ], f => f), TypeError)
 })
