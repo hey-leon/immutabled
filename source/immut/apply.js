@@ -15,12 +15,12 @@ import { updateIn } from './updateIn'
  * @param  {Func}  f to apply
  * @return {Immut} the copy of the immutable with the updated value
  * @since 0.0.1
- * @deprecated since 0.0.8, to be removed in 0.0.10
+ * @deprecated since 0.0.1, to be removed in 0.1.0
  */
 export const apply: (Immut, any[], Func) => Immut | void =
   (...args) => {
     console.warn(
-      'apply is deprecated! please use updateIn. apply will be removed in 0.0.10.'
+      'apply is deprecated! please use updateIn. apply will be removed in 0.1.0.'
     )
 
     return updateIn(...args)
