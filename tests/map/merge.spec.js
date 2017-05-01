@@ -23,9 +23,9 @@ test('map.merge: should merge value', t => {
   t.not(m3.__data__, m2.__data__)
   t.is(m3.__size__, 3)
   t.deepEqual(m3.__data__, {
-    a: F.currString1,
-    b: F.currString3,
-    c: F.currString2,
+    a: F.string1,
+    b: F.string3,
+    c: F.string2,
   })
   t.deepEqual(Object.keys(m3.__data__), [
     ...new Set([
@@ -46,9 +46,9 @@ test('map.merge: should merge value overwriting m1', t => {
   t.not(m3.__data__, m2.__data__)
   t.is(m3.__size__, 3)
   t.deepEqual(m3.__data__, {
-    a: F.currString1,
-    b: F.currString2,
-    c: F.currString2,
+    a: F.string1,
+    b: F.string2,
+    c: F.string2,
   })
   t.deepEqual(Object.keys(m3.__data__), [
     ...new Set([

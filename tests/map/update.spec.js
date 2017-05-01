@@ -17,10 +17,10 @@ test('map.update: should update (already set) value', t => {
   const k = 'a'
   const m1 = F.mapOfa()
 
-  const m2 = update(m1, k, f => f + F.nextString1)
+  const m2 = update(m1, k, f => f + F.string4)
   t.true(A.testRefs(m1, m2, [k]))
-  t.is(m1.__data__[k], F.currString1)
-  t.is(m2.__data__[k], F.currString1 + F.nextString1)
+  t.is(m1.__data__[k], F.string1)
+  t.is(m2.__data__[k], F.string1 + F.string4)
   t.true(A.testSize(m1, m2, 0))
 })
 
@@ -28,9 +28,9 @@ test('map.update: should update (unset) value', t => {
   const k = 'a'
   const m1 = F.map()
 
-  const m2 = update(m1, k, f => f + F.nextString1)
+  const m2 = update(m1, k, f => f + F.string4)
   t.true(A.testRefs(m1, m2, [k]))
   t.is(m1.__data__[k], undefined)
-  t.is(m2.__data__[k], undefined + F.nextString1)
+  t.is(m2.__data__[k], undefined + F.string4)
   t.true(A.testSize(m1, m2, 1))
 })

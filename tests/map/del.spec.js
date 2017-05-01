@@ -19,7 +19,7 @@ test('map.del: should del member at key (member exists)', t => {
   const m2 = del(m1, k)
   t.true(A.testRefs(m1, m2, [k]))
   t.true(A.testSize(m1, m2, -1))
-  t.is(m1.__data__[k], F.currString1)
+  t.is(m1.__data__[k], F.string1)
   t.is(m2.__data__[k], undefined)
 })
 

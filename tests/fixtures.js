@@ -3,12 +3,12 @@
 //
 // primitive fixtures
 //
-export const currString1 = 'currString1'
-export const currString2 = 'currString2'
-export const currString3 = 'currString3'
-export const nextString1 = 'nextString1'
-export const nextString2 = 'nextString2'
-export const nextString3 = 'nextString3'
+export const string1 = 'string1'
+export const string2 = 'string2'
+export const string3 = 'string3'
+export const string4 = 'string4'
+export const string5 = 'string5'
+export const string6 = 'string6'
 
 
 //
@@ -23,21 +23,21 @@ export const map = () => ({
 
 export const mapOfa = () => ({
   __type__: '__immut_map__',
-  __data__: { a: currString1 },
+  __data__: { a: string1 },
   __size__: 1,
 })
 
 export const mapOf1 = () => ({
   __type__: '__immut_map__',
-  __data__: { [1]: currString1 },
+  __data__: { [1]: string1 },
   __size__: 1,
 })
 
 export const mapOfab = () => ({
   __type__: '__immut_map__',
   __data__: {
-    a: currString1,
-    b: currString2,
+    a: string1,
+    b: string2,
   },
   __size__: 2,
 })
@@ -45,8 +45,8 @@ export const mapOfab = () => ({
 export const mapOfbc = () => ({
   __type__: '__immut_map__',
   __data__: {
-    b: currString3,
-    c: currString2,
+    b: string3,
+    c: string2,
   },
   __size__: 2,
 })
@@ -88,15 +88,15 @@ export const list = () => ({
 
 export const listOf0 = () => ({
   __type__: '__immut_list__',
-  __data__: [ currString1 ],
+  __data__: [ string1 ],
   __size__: 1,
 })
 
 export const listOf1 = () => ({
   __type__: '__immut_list__',
   __data__: [
-    currString1,
-    currString2,
+    string1,
+    string2,
   ],
   __size__: 2,
 })

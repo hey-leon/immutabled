@@ -13,15 +13,15 @@ test('immut.get: should be curryable', t => {
 })
 
 test('immut.get: should access string keyed member on map type', t => {
-  t.is(get(F.mapOfa(), 'a'), F.currString1)
+  t.is(get(F.mapOfa(), 'a'), F.string1)
 })
 
 test('immut.get: should access number keyed member on map type', t => {
-  t.is(get(F.mapOf1(), 1), F.currString1)
+  t.is(get(F.mapOf1(), 1), F.string1)
 })
 
 test('immut.get: should access index on list type', t => {
-  t.is(get(F.listOf0(), 0), F.currString1)
+  t.is(get(F.listOf0(), 0), F.string1)
 })
 
 test('immut.get: should error on bad key of map type', t => {
