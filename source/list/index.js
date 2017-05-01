@@ -9,6 +9,7 @@ import find      from './find'
 import findIndex from './findIndex'
 import fold      from './fold'
 import get       from '../immut/get'
+import getIn     from '../immut/getIn'
 import has       from './has'
 import indexOf   from './indexOf'
 import map       from './map'
@@ -17,6 +18,7 @@ import partition from './partition'
 import pop       from './pop'
 import push      from './push'
 import set       from './set'
+import setIn     from '../immut/setIn'
 import size      from '../immut/size'
 import some      from './some'
 import sort      from './sort'
@@ -37,6 +39,7 @@ export {
   findIndex,
   fold,
   get,
+  getIn,
   has,
   indexOf,
   map,
@@ -45,6 +48,7 @@ export {
   pop,
   push,
   set,
+  setIn,
   size,
   some,
   sort,
@@ -65,6 +69,7 @@ export default {
   findIndex,
   fold,
   get,
+  getIn,
   has,
   indexOf,
   map,
@@ -73,6 +78,7 @@ export default {
   pop,
   push,
   set,
+  setIn,
   size,
   some,
   sort,
