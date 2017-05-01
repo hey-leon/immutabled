@@ -1,7 +1,6 @@
 import test from 'ava'
 
 import getIn from '../../source/immut/getIn'
-
 import {
   _,
 } from '../../source/utils/curry'
@@ -104,7 +103,6 @@ test('immut#getIn: should error on bad index for nested list type', t => {
 
   t.throws(() => getIn(i, ks), ReferenceError)
 })
-
 
 test('immut#getIn: should error on bad index for nested mixed type', t => {
   const ks = [ 1, 'f' ]

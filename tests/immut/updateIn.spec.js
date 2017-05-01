@@ -8,7 +8,6 @@ import {
   _,
 } from '../../source/utils/curry.js'
 
-
 test('immut.updateIn: should be curryable', t => {
   t.is(updateIn(_), updateIn)
 })
@@ -96,7 +95,6 @@ test('immut.updateIn: should update (unset) nested entity in (list->list)', t =>
   t.true(A.testSize(i1.__data__[0], i2.__data__[0], 1))
   t.is(i2.__data__[0].__data__[0], undefined + F.nextString1)
 })
-
 
 test('immut.updateIn: should update (already set) nested member on (map->list)', t => {
   const path = [ 'b', 0 ]

@@ -1,29 +1,25 @@
 import test from 'ava'
 
-
 //
 // NOTE: from is internally known as parse
 //
 
-
 import parse from '../../source/immut/from'
-
 import list from '../../source/list'
 import map  from '../../source/map'
-
 import {
   ofMap,
   ofList,
   ofLeaf,
 } from '../../source/immut/from'
-
-import { _ } from '../../source/utils/curry'
+import {
+  _,
+} from '../../source/utils/curry'
 
 
 test('immut.from: should be curryable', t => {
   t.is(parse(_), parse)
 })
-
 
 test('immut.from: should parse simple map', t => {
   const shape = {
@@ -39,7 +35,6 @@ test('immut.from: should parse simple map', t => {
   t.deepEqual(i, map.of({ a: 'holla', b: 10 }))
 })
 
-
 test('immut.from: should strip excess keys on map', t => {
   const shape = {
     type: map.type,
@@ -52,7 +47,6 @@ test('immut.from: should strip excess keys on map', t => {
   t.is(i.__size__, 1)
   t.deepEqual(i, map.of({ b: 33 }))
 })
-
 
 test('immut.from: should add defaults for missing keys', t => {
   const shape = {
@@ -68,7 +62,6 @@ test('immut.from: should add defaults for missing keys', t => {
   t.deepEqual(i, map.of({ b: 22, c: 'yolo' }))
 })
 
-
 test('immut.from: should parse simple list', t => {
   const shape = { type: list.type }
 
@@ -76,7 +69,6 @@ test('immut.from: should parse simple list', t => {
   t.is(i.__size__, 3)
   t.deepEqual(i, list.of([ 10, 22, 11 ]))
 })
-
 
 test('immut.from: should parse map of maps', t => {
   const shape = {
@@ -105,7 +97,6 @@ test('immut.from: should parse map of maps', t => {
   }))
 })
 
-
 test('immut.from: should parse list of lists', t => {
   const shape = {
     type: list.type,
@@ -128,7 +119,6 @@ test('immut.from: should parse list of lists', t => {
     list.of(),
   ]))
 })
-
 
 test('immut.from: should parse complex shape', t => {
   const shape = {
@@ -155,16 +145,13 @@ test('immut.from: should parse complex shape', t => {
   ]))
 })
 
-
 test('ofMap: should throw if d !== {}', t => {
   t.throws(() => ofMap(null, ''), TypeError)
 })
 
-
 test('ofList: should throw if d !== []', t => {
   t.throws(() => ofList(null, {}), TypeError)
 })
-
 
 test('ofLeaf: should always return data if exists', t => {
   const d1 = 'holla world'
