@@ -14,7 +14,7 @@ test('immut.updateIn: should be curryable', t => {
 
 test('immut.updateIn: should update (already set) member on map', t => {
   const path = [ 'a' ]
-  const i1 = F.mapOf1()
+  const i1 = F.mapOfa()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -24,7 +24,7 @@ test('immut.updateIn: should update (already set) member on map', t => {
 
 test('immut.updateIn: should update (unset) member on map', t => {
   const path = [ 'a' ]
-  const i1 = F.mapOf0()
+  const i1 = F.map()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -34,7 +34,7 @@ test('immut.updateIn: should update (unset) member on map', t => {
 
 test('immut.updateIn: should update (already set) entity in list', t => {
   const path = [ 0 ]
-  const i1 = F.listOf1()
+  const i1 = F.listOf0()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -44,7 +44,7 @@ test('immut.updateIn: should update (already set) entity in list', t => {
 
 test('immut.updateIn: should update (unset) entity in list', t => {
   const path = [ 0 ]
-  const i1 = F.listOf0()
+  const i1 = F.list()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -54,7 +54,7 @@ test('immut.updateIn: should update (unset) entity in list', t => {
 
 test('immut.updateIn: should update (already set) nested member on (map->map)', t => {
   const path = [ 'b', 'a' ]
-  const i1 = F.mapOfMaps1()
+  const i1 = F.mapOfMapsA()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -65,7 +65,7 @@ test('immut.updateIn: should update (already set) nested member on (map->map)', 
 
 test('immut.updateIn: should update (unset) nested member on (map->map)', t => {
   const path = [ 'b', 'a' ]
-  const i1 = F.mapOfMaps0()
+  const i1 = F.mapOfMaps()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -76,7 +76,7 @@ test('immut.updateIn: should update (unset) nested member on (map->map)', t => {
 
 test('immut.updateIn: should update (already set) nested entity in (list->list)', t => {
   const path = [ 0, 0 ]
-  const i1 = F.listOfLists1()
+  const i1 = F.listOfLists0()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))
@@ -87,7 +87,7 @@ test('immut.updateIn: should update (already set) nested entity in (list->list)'
 
 test('immut.updateIn: should update (unset) nested entity in (list->list)', t => {
   const path = [ 0, 0 ]
-  const i1 = F.listOfLists0()
+  const i1 = F.listOfLists()
 
   const i2 = updateIn(i1, path, f => f + F.nextString1)
   t.true(A.testRefs(i1, i2, path))

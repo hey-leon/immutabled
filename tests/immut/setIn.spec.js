@@ -15,7 +15,7 @@ test('immut.setIn: should be curryable', t => {
 
 test('immut.setIn: should set (unset) member in map type', t => {
   const ks = [ 'a' ]
-  const i1 = F.mapOf0() // has no member on `a`
+  const i1 = F.map() // has no member on `a`
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -26,7 +26,7 @@ test('immut.setIn: should set (unset) member in map type', t => {
 
 test('immut.setIn: should set (already set) member in map type', t => {
   const ks = [ 'a' ]
-  const i1 = F.mapOf1() // has member `a` already
+  const i1 = F.mapOfa() // has member `a` already
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -37,7 +37,7 @@ test('immut.setIn: should set (already set) member in map type', t => {
 
 test('immut.setIn: should set (unset) entity in list type', t => {
   const ks = [ 0 ]
-  const i1 = F.listOf0() // has no entity on `0`
+  const i1 = F.list() // has no entity on `0`
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -48,7 +48,7 @@ test('immut.setIn: should set (unset) entity in list type', t => {
 
 test('immut.setIn: should set (already set) entity in list type', t => {
   const ks = [ 0 ]
-  const i1 = F.listOf1() // has entity `0` already
+  const i1 = F.listOf0() // has entity `0` already
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -59,7 +59,7 @@ test('immut.setIn: should set (already set) entity in list type', t => {
 
 test('immut.setIn: should set (unset) nested member in map type', t => {
   const ks = [ 'b', 'a' ]
-  const i1 = F.mapOfMaps0() // has no member on `b -> a`
+  const i1 = F.mapOfMaps() // has no member on `b -> a`
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -70,7 +70,7 @@ test('immut.setIn: should set (unset) nested member in map type', t => {
 
 test('immut.setIn: should set (already set) nested member in map type', t => {
   const ks = [ 'b', 'a' ]
-  const i1 = F.mapOfMaps1() // has member `b -> a` already
+  const i1 = F.mapOfMapsA() // has member `b -> a` already
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -81,7 +81,7 @@ test('immut.setIn: should set (already set) nested member in map type', t => {
 
 test('immut.setIn: should set (unset) nested entity in list type', t => {
   const ks = [ 0, 0 ]
-  const i1 = F.listOfLists0() // has no entity on `0 -> 0`
+  const i1 = F.listOfLists() // has no entity on `0 -> 0`
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -92,7 +92,7 @@ test('immut.setIn: should set (unset) nested entity in list type', t => {
 
 test('immut.setIn: should set (already set) nested entity in list type', t => {
   const ks = [ 0, 0 ]
-  const i1 = F.listOfLists1() // has entity `0 -> 0` already
+  const i1 = F.listOfLists0() // has entity `0 -> 0` already
 
   const i2 = setIn(i1, ks, F.nextString1)
   t.true(A.testRefs(i1, i2, ks))
@@ -147,13 +147,13 @@ test('immut.setIn: should set (already set) nested entity in mixed type (list->m
 
 test('immut.setIn: should error on bad key for nested map type', t => {
   const ks = [ 'a', 'a' ]
-  const i1 = F.mapOfMaps1() // has no member on `a`
+  const i1 = F.mapOfMapsA() // has no member on `a`
   t.throws(() => setIn(i1, ks, F.nextString1), TypeError)
 })
 
 test('immut.setIn: should error on bad index for nested list type', t => {
   const ks = [ 1, 0 ]
-  const i1 = F.listOfLists1() // has no entity at `1`
+  const i1 = F.listOfLists0() // has no entity at `1`
   t.throws(() => setIn(i1, ks, F.nextString1), TypeError)
 })
 

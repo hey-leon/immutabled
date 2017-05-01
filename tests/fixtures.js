@@ -5,53 +5,64 @@
 //
 export const currString1 = 'currString1'
 export const currString2 = 'currString2'
+export const currString3 = 'currString3'
 export const nextString1 = 'nextString1'
 export const nextString2 = 'nextString2'
+export const nextString3 = 'nextString3'
 
 
 //
 // map fixtures
 //
 
-export const mapOf0 = () => ({
+export const map = () => ({
   __type__: '__immut_map__',
   __data__: {},
   __size__: 0,
 })
 
-export const mapOf1 = () => ({
+export const mapOfa = () => ({
   __type__: '__immut_map__',
   __data__: { a: currString1 },
   __size__: 1,
 })
 
-export const mapOf1n = () => ({
+export const mapOf1 = () => ({
   __type__: '__immut_map__',
   __data__: { [1]: currString1 },
   __size__: 1,
 })
 
-export const mapOf2 = () => ({
+export const mapOfab = () => ({
   __type__: '__immut_map__',
   __data__: {
-    b: currString1,
+    a: currString1,
+    b: currString2,
+  },
+  __size__: 2,
+})
+
+export const mapOfbc = () => ({
+  __type__: '__immut_map__',
+  __data__: {
+    b: currString3,
     c: currString2,
   },
   __size__: 2,
 })
 
-export const mapOfMaps0 = () => ({
+export const mapOfMaps = () => ({
     __type__: '__immut_map__',
   __data__: {
-    b: mapOf0(),
+    b: map(),
   },
   __size__: 1,
 })
 
-export const mapOfMaps1 = () => ({
+export const mapOfMapsA = () => ({
     __type__: '__immut_map__',
   __data__: {
-    b: mapOf1(),
+    b: mapOfa(),
   },
   __size__: 1,
 })
@@ -63,19 +74,19 @@ export const mapOfMaps1 = () => ({
 // list fixtures
 //
 
-export const listOf0 = () => ({
+export const list = () => ({
   __type__: '__immut_list__',
   __data__: [],
   __size__: 0,
 })
 
-export const listOf1 = () => ({
+export const listOf0 = () => ({
   __type__: '__immut_list__',
   __data__: [ currString1 ],
   __size__: 1,
 })
 
-export const listOf2 = () => ({
+export const listOf1 = () => ({
   __type__: '__immut_list__',
   __data__: [
     currString1,
@@ -84,18 +95,18 @@ export const listOf2 = () => ({
   __size__: 2,
 })
 
-export const listOfLists0 = () => ({
+export const listOfLists = () => ({
   __type__: '__immut_list__',
   __data__: [
-    listOf0(),
+    list(),
   ],
   __size__: 1,
 })
 
-export const listOfLists1 = () => ({
+export const listOfLists0 = () => ({
   __type__: '__immut_list__',
   __data__: [
-    listOf1(),
+    listOf0(),
   ],
   __size__: 1,
 })
@@ -110,7 +121,7 @@ export const listOfLists1 = () => ({
 export const mapOfLists0 = () => ({
   __type__: '__immut_map__',
   __data__: {
-    b: listOf0(),
+    b: list(),
   },
   __size__: 1,
 })
@@ -118,7 +129,7 @@ export const mapOfLists0 = () => ({
 export const mapOfLists1 = () => ({
   __type__: '__immut_map__',
   __data__: {
-    b: listOf1(),
+    b: listOf0(),
   },
   __size__: 1,
 })
@@ -126,7 +137,7 @@ export const mapOfLists1 = () => ({
 export const listOfMaps0 = () => ({
   __type__: '__immut_list__',
   __data__: [
-    mapOf0(),
+    map(),
   ],
   __size__: 1,
 })
@@ -134,7 +145,7 @@ export const listOfMaps0 = () => ({
 export const listOfMaps1 = () => ({
   __type__: '__immut_list__',
   __data__: [
-    mapOf1(),
+    mapOfa(),
   ],
   __size__: 1,
 })
